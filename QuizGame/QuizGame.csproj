@@ -95,6 +95,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BotonesPersonalizados\Boton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BotonesPersonalizados\Fondo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BotonesPersonalizados\PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BotonesPersonalizados\PreguntaTexto.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
