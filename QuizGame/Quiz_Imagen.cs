@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace QuizGame
 {
-    public partial class Inicio : Form
+    public partial class Quiz_Imagen : Form
     {
-        public Inicio()
+        public Quiz_Imagen()
         {
             InitializeComponent();
+            string preguntaPrueba = "¿Quién descubrió América en 1492?";
+            pregunta.Pregunta = preguntaPrueba;
+        }
+
+        private void Quiz_Imagen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
