@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.fondoRadial1 = new QuizGame.ControlesPersonalizados.FondoRadial();
-            this.pregunta = new QuizGame.ControlesPersonalizados.PreguntaControl();
-            this.btn_respuesta1 = new QuizGame.BotonesPersonalizados.Boton();
-            this.btn_respuesta3 = new QuizGame.BotonesPersonalizados.Boton();
-            this.btn_respuesta2 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta4 = new QuizGame.BotonesPersonalizados.Boton();
+            this.btn_respuesta2 = new QuizGame.BotonesPersonalizados.Boton();
+            this.btn_respuesta3 = new QuizGame.BotonesPersonalizados.Boton();
+            this.btn_respuesta1 = new QuizGame.BotonesPersonalizados.Boton();
+            this.pregunta = new QuizGame.ControlesPersonalizados.PreguntaControl();
             this.fondoRadial1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,26 +41,69 @@
             // 
             this.fondoRadial1.BorderColor = System.Drawing.Color.MediumPurple;
             this.fondoRadial1.CenterColor = System.Drawing.Color.PaleTurquoise;
+            this.fondoRadial1.Controls.Add(this.pregunta);
             this.fondoRadial1.Controls.Add(this.btn_respuesta4);
             this.fondoRadial1.Controls.Add(this.btn_respuesta2);
             this.fondoRadial1.Controls.Add(this.btn_respuesta3);
-            this.fondoRadial1.Controls.Add(this.pregunta);
             this.fondoRadial1.Controls.Add(this.btn_respuesta1);
             this.fondoRadial1.Location = new System.Drawing.Point(-2, -4);
             this.fondoRadial1.Name = "fondoRadial1";
             this.fondoRadial1.Size = new System.Drawing.Size(699, 362);
             this.fondoRadial1.TabIndex = 0;
             // 
-            // pregunta
+            // btn_respuesta4
             // 
-            this.pregunta.BorderRadius = 30;
-            this.pregunta.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.pregunta.ForeColor = System.Drawing.Color.Black;
-            this.pregunta.Location = new System.Drawing.Point(87, 81);
-            this.pregunta.Name = "pregunta";
-            this.pregunta.Pregunta = "";
-            this.pregunta.Size = new System.Drawing.Size(528, 45);
-            this.pregunta.TabIndex = 1;
+            this.btn_respuesta4.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_respuesta4.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_respuesta4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_respuesta4.BorderRadius = 40;
+            this.btn_respuesta4.BorderSize = 0;
+            this.btn_respuesta4.FlatAppearance.BorderSize = 0;
+            this.btn_respuesta4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_respuesta4.ForeColor = System.Drawing.Color.White;
+            this.btn_respuesta4.Location = new System.Drawing.Point(431, 229);
+            this.btn_respuesta4.Name = "btn_respuesta4";
+            this.btn_respuesta4.Size = new System.Drawing.Size(150, 40);
+            this.btn_respuesta4.TabIndex = 4;
+            this.btn_respuesta4.Text = "Respuesta 4";
+            this.btn_respuesta4.TextColor = System.Drawing.Color.White;
+            this.btn_respuesta4.UseVisualStyleBackColor = false;
+            // 
+            // btn_respuesta2
+            // 
+            this.btn_respuesta2.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_respuesta2.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_respuesta2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_respuesta2.BorderRadius = 40;
+            this.btn_respuesta2.BorderSize = 0;
+            this.btn_respuesta2.FlatAppearance.BorderSize = 0;
+            this.btn_respuesta2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_respuesta2.ForeColor = System.Drawing.Color.White;
+            this.btn_respuesta2.Location = new System.Drawing.Point(431, 170);
+            this.btn_respuesta2.Name = "btn_respuesta2";
+            this.btn_respuesta2.Size = new System.Drawing.Size(150, 40);
+            this.btn_respuesta2.TabIndex = 3;
+            this.btn_respuesta2.Text = "Respuesta 2";
+            this.btn_respuesta2.TextColor = System.Drawing.Color.White;
+            this.btn_respuesta2.UseVisualStyleBackColor = false;
+            // 
+            // btn_respuesta3
+            // 
+            this.btn_respuesta3.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_respuesta3.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.btn_respuesta3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_respuesta3.BorderRadius = 40;
+            this.btn_respuesta3.BorderSize = 0;
+            this.btn_respuesta3.FlatAppearance.BorderSize = 0;
+            this.btn_respuesta3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_respuesta3.ForeColor = System.Drawing.Color.White;
+            this.btn_respuesta3.Location = new System.Drawing.Point(123, 229);
+            this.btn_respuesta3.Name = "btn_respuesta3";
+            this.btn_respuesta3.Size = new System.Drawing.Size(150, 40);
+            this.btn_respuesta3.TabIndex = 2;
+            this.btn_respuesta3.Text = "Respuesta 3";
+            this.btn_respuesta3.TextColor = System.Drawing.Color.White;
+            this.btn_respuesta3.UseVisualStyleBackColor = false;
             // 
             // btn_respuesta1
             // 
@@ -81,59 +124,16 @@
             this.btn_respuesta1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_respuesta1.UseVisualStyleBackColor = false;
             // 
-            // btn_respuesta3
+            // pregunta
             // 
-            this.btn_respuesta3.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btn_respuesta3.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
-            this.btn_respuesta3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_respuesta3.BorderRadius = 40;
-            this.btn_respuesta3.BorderSize = 0;
-            this.btn_respuesta3.FlatAppearance.BorderSize = 0;
-            this.btn_respuesta3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_respuesta3.ForeColor = System.Drawing.Color.White;
-            this.btn_respuesta3.Location = new System.Drawing.Point(123, 229);
-            this.btn_respuesta3.Name = "btn_respuesta3";
-            this.btn_respuesta3.Size = new System.Drawing.Size(150, 40);
-            this.btn_respuesta3.TabIndex = 2;
-            this.btn_respuesta3.Text = "Respuesta 3";
-            this.btn_respuesta3.TextColor = System.Drawing.Color.White;
-            this.btn_respuesta3.UseVisualStyleBackColor = false;
-            // 
-            // btn_respuesta2
-            // 
-            this.btn_respuesta2.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btn_respuesta2.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
-            this.btn_respuesta2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_respuesta2.BorderRadius = 40;
-            this.btn_respuesta2.BorderSize = 0;
-            this.btn_respuesta2.FlatAppearance.BorderSize = 0;
-            this.btn_respuesta2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_respuesta2.ForeColor = System.Drawing.Color.White;
-            this.btn_respuesta2.Location = new System.Drawing.Point(431, 170);
-            this.btn_respuesta2.Name = "btn_respuesta2";
-            this.btn_respuesta2.Size = new System.Drawing.Size(150, 40);
-            this.btn_respuesta2.TabIndex = 3;
-            this.btn_respuesta2.Text = "Respuesta 2";
-            this.btn_respuesta2.TextColor = System.Drawing.Color.White;
-            this.btn_respuesta2.UseVisualStyleBackColor = false;
-            // 
-            // btn_respuesta4
-            // 
-            this.btn_respuesta4.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.btn_respuesta4.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
-            this.btn_respuesta4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_respuesta4.BorderRadius = 40;
-            this.btn_respuesta4.BorderSize = 0;
-            this.btn_respuesta4.FlatAppearance.BorderSize = 0;
-            this.btn_respuesta4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_respuesta4.ForeColor = System.Drawing.Color.White;
-            this.btn_respuesta4.Location = new System.Drawing.Point(431, 229);
-            this.btn_respuesta4.Name = "btn_respuesta4";
-            this.btn_respuesta4.Size = new System.Drawing.Size(150, 40);
-            this.btn_respuesta4.TabIndex = 4;
-            this.btn_respuesta4.Text = "Respuesta 4";
-            this.btn_respuesta4.TextColor = System.Drawing.Color.White;
-            this.btn_respuesta4.UseVisualStyleBackColor = false;
+            this.pregunta.BorderRadius = 30;
+            this.pregunta.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.pregunta.ForeColor = System.Drawing.Color.Black;
+            this.pregunta.Location = new System.Drawing.Point(119, 55);
+            this.pregunta.Name = "pregunta";
+            this.pregunta.Pregunta = "";
+            this.pregunta.Size = new System.Drawing.Size(462, 66);
+            this.pregunta.TabIndex = 5;
             // 
             // Inicio
             // 
@@ -153,10 +153,10 @@
 
         private ControlesPersonalizados.FondoRadial fondoRadial1;
         private BotonesPersonalizados.Boton btn_respuesta1;
-        private ControlesPersonalizados.PreguntaControl pregunta;
         private BotonesPersonalizados.Boton btn_respuesta4;
         private BotonesPersonalizados.Boton btn_respuesta2;
         private BotonesPersonalizados.Boton btn_respuesta3;
+        private ControlesPersonalizados.PreguntaControl pregunta;
     }
 }
 

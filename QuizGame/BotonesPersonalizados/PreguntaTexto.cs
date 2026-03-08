@@ -33,6 +33,7 @@ namespace QuizGame.ControlesPersonalizados
             set
             {
                 borderRadius = value;
+                UpdateRegion();
                 this.Invalidate();
             }
         }
@@ -49,16 +50,30 @@ namespace QuizGame.ControlesPersonalizados
         {
             GraphicsPath path = new GraphicsPath();
 
-            float r = radius;
+            int r = radius * 2;
 
             path.StartFigure();
             path.AddArc(rect.X, rect.Y, r, r, 180, 90);
-            path.AddArc(rect.Width - r, rect.Y, r, r, 270, 90);
-            path.AddArc(rect.Width - r, rect.Height - r, r, r, 0, 90);
-            path.AddArc(rect.X, rect.Height - r, r, r, 90, 90);
+            path.AddArc(rect.Right - r, rect.Y, r, r, 270, 90);
+            path.AddArc(rect.Right - r, rect.Bottom - r, r, r, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - r, r, r, 90, 90);
             path.CloseFigure();
 
             return path;
+        }
+
+        private void UpdateRegion()
+        {
+            using (GraphicsPath path = GetPath(this.ClientRectangle, borderRadius))
+            {
+                this.Region = new Region(path);
+            }
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            UpdateRegion();
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -83,7 +98,10 @@ namespace QuizGame.ControlesPersonalizados
 
             Rectangle textArea = new Rectangle(10, 10, this.Width - 20, this.Height - 20);
 
-            e.Graphics.DrawString(pregunta,this.Font,Brushes.Black,textArea,formato);
+            using (SolidBrush textBrush = new SolidBrush(this.ForeColor))
+            {
+                e.Graphics.DrawString(pregunta, this.Font, textBrush, textArea, formato);
+            }
         }
     }
 }
