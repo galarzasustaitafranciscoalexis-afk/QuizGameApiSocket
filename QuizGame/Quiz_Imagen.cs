@@ -17,11 +17,6 @@ namespace QuizGame
             InitializeComponent();
             string preguntaPrueba = "¿Quién descubrió América en 1492?";
             pregunta.Pregunta = preguntaPrueba;
-
-            imagen_respuesta1.Image = Image.FromFile(@"C:\Users\HP\Pictures\Hongo.jpg");
-            imagen_respuesta2.Image = Image.FromFile(@"C:\Users\HP\Pictures\Hongo.jpg");
-            imagen_respuesta3.Image = Image.FromFile(@"C:\Users\HP\Pictures\Hongo.jpg");
-            imagen_respuesta4.Image = Image.FromFile(@"C:\Users\HP\Pictures\Hongo.jpg");
         }
 
         private void Quiz_Imagen_Load(object sender, EventArgs e)
