@@ -1,6 +1,6 @@
 ﻿namespace QuizGame
 {
-    partial class Inicio
+    partial class Quiz_Texto
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.fondoRadial1 = new QuizGame.ControlesPersonalizados.FondoRadial();
+            this.pregunta = new QuizGame.ControlesPersonalizados.PreguntaControl();
             this.btn_respuesta4 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta2 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta3 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta1 = new QuizGame.BotonesPersonalizados.Boton();
-            this.pregunta = new QuizGame.ControlesPersonalizados.PreguntaControl();
             this.fondoRadial1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,17 @@
             this.fondoRadial1.Name = "fondoRadial1";
             this.fondoRadial1.Size = new System.Drawing.Size(699, 362);
             this.fondoRadial1.TabIndex = 0;
+            // 
+            // pregunta
+            // 
+            this.pregunta.BorderRadius = 30;
+            this.pregunta.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
+            this.pregunta.ForeColor = System.Drawing.Color.Black;
+            this.pregunta.Location = new System.Drawing.Point(119, 55);
+            this.pregunta.Name = "pregunta";
+            this.pregunta.Pregunta = "";
+            this.pregunta.Size = new System.Drawing.Size(462, 66);
+            this.pregunta.TabIndex = 5;
             // 
             // btn_respuesta4
             // 
@@ -124,25 +135,14 @@
             this.btn_respuesta1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_respuesta1.UseVisualStyleBackColor = false;
             // 
-            // pregunta
-            // 
-            this.pregunta.BorderRadius = 30;
-            this.pregunta.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
-            this.pregunta.ForeColor = System.Drawing.Color.Black;
-            this.pregunta.Location = new System.Drawing.Point(119, 55);
-            this.pregunta.Name = "pregunta";
-            this.pregunta.Pregunta = "";
-            this.pregunta.Size = new System.Drawing.Size(462, 66);
-            this.pregunta.TabIndex = 5;
-            // 
-            // Inicio
+            // Quiz_Texto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 357);
             this.Controls.Add(this.fondoRadial1);
-            this.Name = "Inicio";
-            this.Text = "Quiz";
+            this.Name = "Quiz_Texto";
+            this.Text = "Quiz  Texto";
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.fondoRadial1.ResumeLayout(false);
             this.ResumeLayout(false);

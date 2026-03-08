@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QuizGame
 {
-    public partial class Inicio : Form
+    public partial class Quiz_Texto : Form
     {
-        public Inicio()
+        public Quiz_Texto()
         {
             InitializeComponent();
             string preguntaPrueba = "¿Quién descubrió América en 1492?";
