@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuizGame.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace QuizGame
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Menu());
+            ConexionBD conexion = new ConexionBD();
+            conexion.recuperarCategoria();
         }
     }
 }
