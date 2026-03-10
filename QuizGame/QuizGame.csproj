@@ -107,6 +107,7 @@
     <Compile Include="BotonesPersonalizados\PreguntaTexto.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Clases\ConexionBD.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
