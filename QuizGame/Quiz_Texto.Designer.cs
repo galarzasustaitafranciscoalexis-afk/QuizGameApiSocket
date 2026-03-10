@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fondoRadial1 = new QuizGame.ControlesPersonalizados.FondoRadial();
+            this.fondo = new QuizGame.ControlesPersonalizados.FondoRadial();
             this.pregunta = new QuizGame.ControlesPersonalizados.PreguntaControl();
             this.btn_respuesta4 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta2 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta3 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta1 = new QuizGame.BotonesPersonalizados.Boton();
-            this.fondoRadial1.SuspendLayout();
+            this.fondo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // fondoRadial1
+            // fondo
             // 
-            this.fondoRadial1.BorderColor = System.Drawing.Color.MediumPurple;
-            this.fondoRadial1.CenterColor = System.Drawing.Color.PaleTurquoise;
-            this.fondoRadial1.Controls.Add(this.pregunta);
-            this.fondoRadial1.Controls.Add(this.btn_respuesta4);
-            this.fondoRadial1.Controls.Add(this.btn_respuesta2);
-            this.fondoRadial1.Controls.Add(this.btn_respuesta3);
-            this.fondoRadial1.Controls.Add(this.btn_respuesta1);
-            this.fondoRadial1.Location = new System.Drawing.Point(-2, -4);
-            this.fondoRadial1.Name = "fondoRadial1";
-            this.fondoRadial1.Size = new System.Drawing.Size(699, 362);
-            this.fondoRadial1.TabIndex = 0;
+            this.fondo.BorderColor = System.Drawing.Color.MediumPurple;
+            this.fondo.CenterColor = System.Drawing.Color.PaleTurquoise;
+            this.fondo.Controls.Add(this.pregunta);
+            this.fondo.Controls.Add(this.btn_respuesta4);
+            this.fondo.Controls.Add(this.btn_respuesta2);
+            this.fondo.Controls.Add(this.btn_respuesta3);
+            this.fondo.Controls.Add(this.btn_respuesta1);
+            this.fondo.Location = new System.Drawing.Point(-2, -4);
+            this.fondo.Name = "fondo";
+            this.fondo.Size = new System.Drawing.Size(699, 362);
+            this.fondo.TabIndex = 0;
             // 
             // pregunta
             // 
@@ -140,18 +140,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 357);
-            this.Controls.Add(this.fondoRadial1);
+            this.Controls.Add(this.fondo);
             this.Name = "Quiz_Texto";
             this.Text = "Quiz  Texto";
             this.Load += new System.EventHandler(this.Inicio_Load);
-            this.fondoRadial1.ResumeLayout(false);
+            this.fondo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ControlesPersonalizados.FondoRadial fondoRadial1;
+        private ControlesPersonalizados.FondoRadial fondo;
         private BotonesPersonalizados.Boton btn_respuesta1;
         private BotonesPersonalizados.Boton btn_respuesta4;
         private BotonesPersonalizados.Boton btn_respuesta2;

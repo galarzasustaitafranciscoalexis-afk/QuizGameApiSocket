@@ -107,6 +107,12 @@
     <Compile Include="BotonesPersonalizados\PreguntaTexto.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Quiz_Imagen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Quiz_Imagen.resx">
       <DependentUpon>Quiz_Imagen.cs</DependentUpon>
     </EmbeddedResource>
