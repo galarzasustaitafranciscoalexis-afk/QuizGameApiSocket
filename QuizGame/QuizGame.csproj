@@ -107,13 +107,18 @@
     <Compile Include="BotonesPersonalizados\PreguntaTexto.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Clases\ConexionBD.cs" />
+    <Compile Include="Clases_base_datos\ConexionBD.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Categoria.cs" />
+    <Compile Include="Modelos\Partida.cs" />
+    <Compile Include="Modelos\PartidaDetalle.cs" />
+    <Compile Include="Modelos\Pregunta.cs" />
+    <Compile Include="Modelos\Respuesta.cs" />
     <Compile Include="Quiz_Imagen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +164,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MySQL_base_datos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

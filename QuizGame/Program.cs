@@ -1,4 +1,4 @@
-﻿using QuizGame.Clases;
+﻿using QuizGame.Clases_base_datos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +15,15 @@ namespace QuizGame
         [STAThread]
         static void Main()
         {
+            //
+            //eliminar esta parte despues de probar la conexion a la base de datos
+            ConexionBD conexion = new ConexionBD();
+            //
+            conexion.recuperarCategoria();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Menu());
-            ConexionBD conexion = new ConexionBD();
-            conexion.recuperarCategoria();
+            
         }
     }
 }

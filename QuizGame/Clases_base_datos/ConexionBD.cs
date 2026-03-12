@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace QuizGame.Clases
+namespace QuizGame.Clases_base_datos
 {
     internal class ConexionBD
     {
@@ -27,7 +27,7 @@ namespace QuizGame.Clases
 
                 while (reader.Read())
                 {
-                    Console.WriteLine(reader["id_categoria"] + " - " + reader["nombre_categoria"]);
+                    MessageBox.Show(reader["id_categoria"] + " - " + reader["nombre_categoria"]);
                 }
             }
             catch (Exception ex)
