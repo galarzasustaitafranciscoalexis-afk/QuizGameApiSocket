@@ -5,39 +5,97 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using QuizGame.Modelos;
 
 namespace QuizGame.Clases_base_datos
 {
     internal class ConexionBD
     {
-        MySqlConnection conn;
+        private string connCadena;
+
         public ConexionBD()
         {
-            conn = new MySqlConnection("server=localhost;user=root;database=quiz_game;port=3306;password=root;");
+            connCadena = "server=localhost;user=root;database=quiz_game;port=3306;password=root;";
         }
-
-        public void recuperarCategoria()
+        //retorna una lista de preguntas ordenadas al azar
+        public List<Pregunta> preguntasAleatorias(int idCategoriaElegida)
         {
-            try
-            {
-                conn.Open();
-                string sql = "SELECT * FROM categoria";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader reader = cmd.ExecuteReader();
+            //lista para guardar las 10 preguntas
+            List<Pregunta> listaPreguntas = new List<Pregunta>();
 
-                while (reader.Read())
+            //using se asegura de cerrar la conexion y liberar recursos
+            using (MySqlConnection conn = new MySqlConnection(connCadena))
+            {
+                try
                 {
-                    MessageBox.Show(reader["id_categoria"] + " - " + reader["nombre_categoria"]);
+                    conn.Open();
+                    string peticion = @"SELECT id_pregunta, texto_pregunta, tipo_respuesta 
+                                        FROM pregunta WHERE id_categoria = @idCat ORDER BY RAND() LIMIT 10;";
+                    
+                    using(MySqlCommand cmd = new MySqlCommand(peticion, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@idCat", idCategoriaElegida);
+
+                        using(MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Pregunta nuevaPregunta = new Pregunta
+                                {
+                                    idPregunta = Convert.ToInt32(reader["id_pregunta"]),
+                                    idCategoria = idCategoriaElegida,
+                                    textoPregunta = reader["texto_pregunta"].ToString(),
+                                    tipoRespuesta = reader["tipo_respuesta"].ToString()
+                                };
+                                //agrega la pregunta seleccionada a la lista
+                                listaPreguntas.Add(nuevaPregunta);
+                            }
+                        }
+                    }
+
+                    string peticionRespuestas = @"SELECT id_respuesta, texto_respuesta, ruta_imagen, es_correcta 
+                                               FROM respuesta WHERE id_pregunta = @idPreg;";
+
+                    using(MySqlCommand cmdResp = new MySqlCommand(peticionRespuestas, conn))
+                    {
+                        cmdResp.Parameters.Add("@idPreg", MySqlDbType.Int32);
+
+                        foreach(Pregunta preguntaActual in listaPreguntas)
+                        {
+                            cmdResp.Parameters["@idPreg"].Value = preguntaActual.idPregunta;
+
+                            using(MySqlDataReader readerResp = cmdResp.ExecuteReader())
+                            {
+                                while (readerResp.Read())
+                                {
+                                    Respuesta nuevaRespuesta = new Respuesta
+                                    {
+                                        idRespuesta = Convert.ToInt32(readerResp["id_respuesta"]),
+                                        idPregunta = preguntaActual.idPregunta,
+                                        //manejo de nulos
+                                        textoRespuesta = readerResp["texto_respuesta"] != DBNull.Value ?
+                                                        readerResp["texto_respuesta"].ToString() : null,
+
+                                        rutaImagen = readerResp["ruta_imagen"] != DBNull.Value ? readerResp["ruta_imagen"].ToString() : null,
+                                        esCorrecta = Convert.ToBoolean(readerResp["es_correcta"])
+                                    };
+
+                                    //agregar la respuesta a la pregunta actual
+                                    preguntaActual.respuestas.Add(nuevaRespuesta);
+                                }
+                            }
+                        }
+                    }
+
+                }catch(MySqlException e)
+                {
+                    MessageBox.Show("Error al cargar las preguntas" + e.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                conn.Close();
-            }
+            //se encarga de ordenar al azar las preguntas de la lista
+            //listaPreguntas = listaPreguntas.OrderBy(x => Guid.NewGuid()).ToList();
+            return listaPreguntas;
         }
+       
     }
 }
