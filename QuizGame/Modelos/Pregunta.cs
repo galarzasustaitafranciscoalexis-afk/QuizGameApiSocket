@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QuizGame.Modelos
 {
-    internal class Pregunta
+    public class Pregunta
     {
         public int idPregunta { get; set; }
         public int idCategoria { get; set; }
