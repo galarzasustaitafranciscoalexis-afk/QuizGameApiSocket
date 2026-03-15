@@ -73,14 +73,16 @@
             this.btn_cat5.BorderSize = 0;
             this.btn_cat5.FlatAppearance.BorderSize = 0;
             this.btn_cat5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cat5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat5.ForeColor = System.Drawing.Color.White;
             this.btn_cat5.Location = new System.Drawing.Point(217, 283);
             this.btn_cat5.Name = "btn_cat5";
             this.btn_cat5.Size = new System.Drawing.Size(247, 40);
             this.btn_cat5.TabIndex = 4;
-            this.btn_cat5.Text = "Categoria 5";
+            this.btn_cat5.Text = "Tecnología";
             this.btn_cat5.TextColor = System.Drawing.Color.White;
             this.btn_cat5.UseVisualStyleBackColor = false;
+            this.btn_cat5.Click += new System.EventHandler(this.btn_cat5_Click_1);
             // 
             // btn_cat4
             // 
@@ -91,14 +93,16 @@
             this.btn_cat4.BorderSize = 0;
             this.btn_cat4.FlatAppearance.BorderSize = 0;
             this.btn_cat4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cat4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat4.ForeColor = System.Drawing.Color.White;
             this.btn_cat4.Location = new System.Drawing.Point(217, 237);
             this.btn_cat4.Name = "btn_cat4";
             this.btn_cat4.Size = new System.Drawing.Size(247, 40);
             this.btn_cat4.TabIndex = 3;
-            this.btn_cat4.Text = "Categoria 4";
+            this.btn_cat4.Text = "Astronomía";
             this.btn_cat4.TextColor = System.Drawing.Color.White;
             this.btn_cat4.UseVisualStyleBackColor = false;
+            this.btn_cat4.Click += new System.EventHandler(this.btn_cat4_Click_1);
             // 
             // btn_cat3
             // 
@@ -109,14 +113,16 @@
             this.btn_cat3.BorderSize = 0;
             this.btn_cat3.FlatAppearance.BorderSize = 0;
             this.btn_cat3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cat3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat3.ForeColor = System.Drawing.Color.White;
             this.btn_cat3.Location = new System.Drawing.Point(217, 191);
             this.btn_cat3.Name = "btn_cat3";
             this.btn_cat3.Size = new System.Drawing.Size(247, 40);
             this.btn_cat3.TabIndex = 2;
-            this.btn_cat3.Text = "Categoria 3";
+            this.btn_cat3.Text = "Música";
             this.btn_cat3.TextColor = System.Drawing.Color.White;
             this.btn_cat3.UseVisualStyleBackColor = false;
+            this.btn_cat3.Click += new System.EventHandler(this.btn_cat3_Click_1);
             // 
             // btn_cat2
             // 
@@ -127,14 +133,16 @@
             this.btn_cat2.BorderSize = 0;
             this.btn_cat2.FlatAppearance.BorderSize = 0;
             this.btn_cat2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cat2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat2.ForeColor = System.Drawing.Color.White;
             this.btn_cat2.Location = new System.Drawing.Point(217, 145);
             this.btn_cat2.Name = "btn_cat2";
             this.btn_cat2.Size = new System.Drawing.Size(247, 40);
             this.btn_cat2.TabIndex = 1;
-            this.btn_cat2.Text = "Categoria 2";
+            this.btn_cat2.Text = "Literatura";
             this.btn_cat2.TextColor = System.Drawing.Color.White;
             this.btn_cat2.UseVisualStyleBackColor = false;
+            this.btn_cat2.Click += new System.EventHandler(this.btn_cat2_Click_1);
             // 
             // btn_cat1
             // 
@@ -145,14 +153,16 @@
             this.btn_cat1.BorderSize = 0;
             this.btn_cat1.FlatAppearance.BorderSize = 0;
             this.btn_cat1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cat1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat1.ForeColor = System.Drawing.Color.White;
             this.btn_cat1.Location = new System.Drawing.Point(217, 99);
             this.btn_cat1.Name = "btn_cat1";
             this.btn_cat1.Size = new System.Drawing.Size(247, 40);
             this.btn_cat1.TabIndex = 0;
-            this.btn_cat1.Text = "Categoria 1";
+            this.btn_cat1.Text = "Historia";
             this.btn_cat1.TextColor = System.Drawing.Color.White;
             this.btn_cat1.UseVisualStyleBackColor = false;
+            this.btn_cat1.Click += new System.EventHandler(this.btn_cat1_Click_1);
             // 
             // Menu
             // 
@@ -162,6 +172,7 @@
             this.Controls.Add(this.fondo);
             this.Name = "Menu";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.fondo.ResumeLayout(false);
             this.fondo.PerformLayout();
             this.ResumeLayout(false);

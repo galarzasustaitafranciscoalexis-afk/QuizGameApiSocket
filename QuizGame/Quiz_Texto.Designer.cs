@@ -71,14 +71,15 @@
             this.btn_respuesta4.BorderSize = 0;
             this.btn_respuesta4.FlatAppearance.BorderSize = 0;
             this.btn_respuesta4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_respuesta4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_respuesta4.ForeColor = System.Drawing.Color.White;
             this.btn_respuesta4.Location = new System.Drawing.Point(431, 229);
             this.btn_respuesta4.Name = "btn_respuesta4";
             this.btn_respuesta4.Size = new System.Drawing.Size(150, 40);
             this.btn_respuesta4.TabIndex = 4;
-            this.btn_respuesta4.Text = "Respuesta 4";
             this.btn_respuesta4.TextColor = System.Drawing.Color.White;
             this.btn_respuesta4.UseVisualStyleBackColor = false;
+            this.btn_respuesta4.Click += new System.EventHandler(this.btn_respuesta4_Click_1);
             // 
             // btn_respuesta2
             // 
@@ -89,14 +90,15 @@
             this.btn_respuesta2.BorderSize = 0;
             this.btn_respuesta2.FlatAppearance.BorderSize = 0;
             this.btn_respuesta2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_respuesta2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_respuesta2.ForeColor = System.Drawing.Color.White;
             this.btn_respuesta2.Location = new System.Drawing.Point(431, 170);
             this.btn_respuesta2.Name = "btn_respuesta2";
             this.btn_respuesta2.Size = new System.Drawing.Size(150, 40);
             this.btn_respuesta2.TabIndex = 3;
-            this.btn_respuesta2.Text = "Respuesta 2";
             this.btn_respuesta2.TextColor = System.Drawing.Color.White;
             this.btn_respuesta2.UseVisualStyleBackColor = false;
+            this.btn_respuesta2.Click += new System.EventHandler(this.btn_respuesta2_Click_1);
             // 
             // btn_respuesta3
             // 
@@ -107,14 +109,15 @@
             this.btn_respuesta3.BorderSize = 0;
             this.btn_respuesta3.FlatAppearance.BorderSize = 0;
             this.btn_respuesta3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_respuesta3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_respuesta3.ForeColor = System.Drawing.Color.White;
             this.btn_respuesta3.Location = new System.Drawing.Point(123, 229);
             this.btn_respuesta3.Name = "btn_respuesta3";
             this.btn_respuesta3.Size = new System.Drawing.Size(150, 40);
             this.btn_respuesta3.TabIndex = 2;
-            this.btn_respuesta3.Text = "Respuesta 3";
             this.btn_respuesta3.TextColor = System.Drawing.Color.White;
             this.btn_respuesta3.UseVisualStyleBackColor = false;
+            this.btn_respuesta3.Click += new System.EventHandler(this.btn_respuesta3_Click_1);
             // 
             // btn_respuesta1
             // 
@@ -125,15 +128,16 @@
             this.btn_respuesta1.BorderSize = 0;
             this.btn_respuesta1.FlatAppearance.BorderSize = 0;
             this.btn_respuesta1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_respuesta1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_respuesta1.ForeColor = System.Drawing.Color.White;
             this.btn_respuesta1.Location = new System.Drawing.Point(123, 170);
             this.btn_respuesta1.Name = "btn_respuesta1";
             this.btn_respuesta1.Size = new System.Drawing.Size(150, 40);
             this.btn_respuesta1.TabIndex = 0;
-            this.btn_respuesta1.Text = "Respueta 1";
             this.btn_respuesta1.TextColor = System.Drawing.Color.White;
             this.btn_respuesta1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_respuesta1.UseVisualStyleBackColor = false;
+            this.btn_respuesta1.Click += new System.EventHandler(this.btn_respuesta1_Click_1);
             // 
             // Quiz_Texto
             // 

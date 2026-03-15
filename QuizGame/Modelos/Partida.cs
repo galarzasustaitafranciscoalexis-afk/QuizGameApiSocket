@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuizGame.Modelos
 {
-    internal class Partida
+    public class Partida
     {
         public int idPartida { get; set; } 
         public int idCategoria { get; set; } // llave foranea
