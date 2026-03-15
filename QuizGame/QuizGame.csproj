@@ -166,6 +166,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\Cat1\" />
+    <Folder Include="assets\Cat2\" />
+    <Folder Include="assets\Cat3\" />
+    <Folder Include="assets\Cat4\" />
+    <Folder Include="assets\Cat5\" />
     <Folder Include="MySQL_base_datos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
