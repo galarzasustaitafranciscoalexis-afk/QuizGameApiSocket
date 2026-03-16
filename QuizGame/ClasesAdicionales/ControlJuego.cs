@@ -1,4 +1,5 @@
-﻿using QuizGame.Modelos;
+﻿using QuizGame.Clases_base_datos;
+using QuizGame.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,26 @@ namespace QuizGame.ClasesAdicionales
         //Carga la pantalla corespondiente al tipo de pregunta
         public static void mostrarSiguientePregunta(Form formActual)
         {
+            //juego terminado
             if (JuegoGlobal.indicePreguntaActual >= JuegoGlobal.preguntas.Count)
             {
+                //  ===================================================
+                //  Guardar la partida y sus detalles en la base de datos
+                //  ====================================================
+                Partida partidaTerminada = new Partida();
+                partidaTerminada.idCategoria = JuegoGlobal.categoriaActual;
+                partidaTerminada.puntajeFinal = JuegoGlobal.puntaje;
+                partidaTerminada.fecha = DateTime.Now;
+                partidaTerminada.detalles = JuegoGlobal.detallesAcumulados;
+
+                ConexionBD db = new ConexionBD();
+                if (!db.guardarPartida(partidaTerminada))
+                {
+                    MessageBox.Show("Hubo un problema al guardar el resultado en la base de datos., " +
+                        "Error de conexión");
+                }
+
+
                 MessageBox.Show("Juego terminado\nPuntaje: " + JuegoGlobal.puntaje);
 
                 //Reiniciar variables del juego

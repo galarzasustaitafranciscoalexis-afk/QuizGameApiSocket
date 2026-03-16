@@ -20,5 +20,8 @@ namespace QuizGame.ClasesAdicionales
 
         //Id de categoria escogida
         public static int categoriaActual = 0;
+        
+        //lista para el historial de partida
+        public static List<PartidaDetalle> detallesAcumulados = new List<PartidaDetalle>();
     }
 }
