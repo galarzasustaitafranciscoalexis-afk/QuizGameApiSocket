@@ -15,7 +15,7 @@ namespace QuizGame.Clases_base_datos
 
         public ConexionBD()
         {
-            connCadena = "server=localhost;user=root;database=quiz_game;port=3306;password=HolaMundo;";
+            connCadena = "server=localhost;user=root;database=quiz_game;port=3306;password=root;";
         }
         //retorna una lista de preguntas ordenadas al azar
         public List<Pregunta> preguntasAleatorias(int idCategoriaElegida)
