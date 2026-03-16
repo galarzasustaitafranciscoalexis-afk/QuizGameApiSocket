@@ -53,7 +53,15 @@ namespace QuizGame
 
             if (r.esCorrecta)
                 JuegoGlobal.puntaje+= 10;
-        
+
+            //  =========================================================================
+            //  Guardar el detalle de esta pregunta para la insercion en la base de datos
+            //  =========================================================================
+            PartidaDetalle detalle = new PartidaDetalle();
+            detalle.idPregunta = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual].idPregunta;
+            detalle.fueCorrecta = r.esCorrecta;
+            JuegoGlobal.detallesAcumulados.Add(detalle);
+
             JuegoGlobal.indicePreguntaActual++;
 
             ControlJuego.mostrarSiguientePregunta(this);
