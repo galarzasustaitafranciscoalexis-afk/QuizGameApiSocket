@@ -28,7 +28,7 @@ namespace QuizGame
             JuegoGlobal.preguntas = db.preguntasAleatorias(categoria);
 
             //Verificacion de las preguntas cargadas con sus respuestas 
-            /*foreach (Pregunta p in JuegoGlobal.preguntas)
+            foreach (Pregunta p in JuegoGlobal.preguntas)
             {
                 Console.WriteLine("Pregunta: " + p.textoPregunta);
 
@@ -37,7 +37,7 @@ namespace QuizGame
                     Console.WriteLine("   Respuesta: " + r.textoRespuesta +
                                       " Correcta: " + r.esCorrecta);
                 }
-            }*/
+            }
 
             //Inicializacion de las variables globales (poscion de la pregunta en el arreglo y puntuacion)
             JuegoGlobal.indicePreguntaActual = 0;

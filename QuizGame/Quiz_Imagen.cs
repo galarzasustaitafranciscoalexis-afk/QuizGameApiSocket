@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,12 +27,17 @@ namespace QuizGame
         {
             Pregunta p = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual];
 
+
             pregunta.Pregunta = p.textoPregunta;
 
-            imagen_respuesta1.ImageLocation = p.respuestas[0].rutaImagen;
-            imagen_respuesta2.ImageLocation = p.respuestas[1].rutaImagen;
-            imagen_respuesta3.ImageLocation = p.respuestas[2].rutaImagen;
-            imagen_respuesta4.ImageLocation = p.respuestas[3].rutaImagen;
+            //string ruta1 = Application.StartupPath + "\\" + p.respuestas[0].rutaImagen;
+            //string ruta = Path.Combine(Application.StartupPath, p.respuestas[0].rutaImagen);
+            //MessageBox.Show(ruta);
+
+            imagen_respuesta1.Image = Image.FromFile(Path.Combine(Application.StartupPath, p.respuestas[0].rutaImagen));
+            imagen_respuesta2.Image = Image.FromFile(Path.Combine(Application.StartupPath, p.respuestas[1].rutaImagen));
+            imagen_respuesta3.Image = Image.FromFile(Path.Combine(Application.StartupPath, p.respuestas[2].rutaImagen));
+            imagen_respuesta4.Image = Image.FromFile(Path.Combine(Application.StartupPath, p.respuestas[3].rutaImagen));
 
             imagen_respuesta1.Tag = p.respuestas[0];
             imagen_respuesta2.Tag = p.respuestas[1];
@@ -46,24 +52,24 @@ namespace QuizGame
             Respuesta r = (Respuesta)pic.Tag;
 
             if (r.esCorrecta)
-            {
                 JuegoGlobal.puntaje+= 10;
-                MessageBox.Show("Correcto");
-            }
-            else
-                MessageBox.Show("Incorrecto");
-
+        
             JuegoGlobal.indicePreguntaActual++;
 
             ControlJuego.mostrarSiguientePregunta(this);
         }
 
-        private void imagen_respuesta1_Click(object sender, EventArgs e)
+        private void Quiz_Imagen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imagen_respuesta1_Click_1(object sender, EventArgs e)
         {
             verificarRespuesta(sender);
         }
 
-        private void imagen_respuesta2_Click(object sender, EventArgs e)
+        private void imagen_respuesta2_Click_1(object sender, EventArgs e)
         {
             verificarRespuesta(sender);
         }
@@ -76,10 +82,6 @@ namespace QuizGame
         private void imagen_respuesta4_Click(object sender, EventArgs e)
         {
             verificarRespuesta(sender);
-        }
-        private void Quiz_Imagen_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
