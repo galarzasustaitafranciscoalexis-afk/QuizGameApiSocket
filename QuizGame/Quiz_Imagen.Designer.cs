@@ -64,6 +64,7 @@
             this.imagen_respuesta4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imagen_respuesta4.TabIndex = 9;
             this.imagen_respuesta4.TabStop = false;
+            this.imagen_respuesta4.Click += new System.EventHandler(this.imagen_respuesta4_Click);
             // 
             // imagen_respuesta3
             // 
@@ -74,6 +75,7 @@
             this.imagen_respuesta3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imagen_respuesta3.TabIndex = 8;
             this.imagen_respuesta3.TabStop = false;
+            this.imagen_respuesta3.Click += new System.EventHandler(this.imagen_respuesta3_Click);
             // 
             // imagen_respuesta2
             // 
@@ -84,6 +86,7 @@
             this.imagen_respuesta2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imagen_respuesta2.TabIndex = 7;
             this.imagen_respuesta2.TabStop = false;
+            this.imagen_respuesta2.Click += new System.EventHandler(this.imagen_respuesta2_Click_1);
             // 
             // imagen_respuesta1
             // 
@@ -94,6 +97,7 @@
             this.imagen_respuesta1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imagen_respuesta1.TabIndex = 6;
             this.imagen_respuesta1.TabStop = false;
+            this.imagen_respuesta1.Click += new System.EventHandler(this.imagen_respuesta1_Click_1);
             // 
             // pregunta
             // 
