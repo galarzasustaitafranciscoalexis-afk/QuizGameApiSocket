@@ -50,15 +50,17 @@
             this.fondo.Controls.Add(this.imagen_respuesta2);
             this.fondo.Controls.Add(this.imagen_respuesta1);
             this.fondo.Controls.Add(this.pregunta);
-            this.fondo.Location = new System.Drawing.Point(1, -2);
+            this.fondo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fondo.Location = new System.Drawing.Point(0, 0);
             this.fondo.Name = "fondo";
-            this.fondo.Size = new System.Drawing.Size(710, 366);
+            this.fondo.Size = new System.Drawing.Size(734, 461);
             this.fondo.TabIndex = 1;
             // 
             // imagen_respuesta4
             // 
+            this.imagen_respuesta4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imagen_respuesta4.BorderRadius = 30;
-            this.imagen_respuesta4.Location = new System.Drawing.Point(521, 158);
+            this.imagen_respuesta4.Location = new System.Drawing.Point(533, 190);
             this.imagen_respuesta4.Name = "imagen_respuesta4";
             this.imagen_respuesta4.Size = new System.Drawing.Size(120, 142);
             this.imagen_respuesta4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -68,8 +70,9 @@
             // 
             // imagen_respuesta3
             // 
+            this.imagen_respuesta3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imagen_respuesta3.BorderRadius = 30;
-            this.imagen_respuesta3.Location = new System.Drawing.Point(365, 158);
+            this.imagen_respuesta3.Location = new System.Drawing.Point(382, 190);
             this.imagen_respuesta3.Name = "imagen_respuesta3";
             this.imagen_respuesta3.Size = new System.Drawing.Size(120, 142);
             this.imagen_respuesta3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -79,8 +82,9 @@
             // 
             // imagen_respuesta2
             // 
+            this.imagen_respuesta2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imagen_respuesta2.BorderRadius = 30;
-            this.imagen_respuesta2.Location = new System.Drawing.Point(211, 158);
+            this.imagen_respuesta2.Location = new System.Drawing.Point(222, 190);
             this.imagen_respuesta2.Name = "imagen_respuesta2";
             this.imagen_respuesta2.Size = new System.Drawing.Size(120, 142);
             this.imagen_respuesta2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -90,8 +94,9 @@
             // 
             // imagen_respuesta1
             // 
+            this.imagen_respuesta1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.imagen_respuesta1.BorderRadius = 30;
-            this.imagen_respuesta1.Location = new System.Drawing.Point(57, 158);
+            this.imagen_respuesta1.Location = new System.Drawing.Point(68, 190);
             this.imagen_respuesta1.Name = "imagen_respuesta1";
             this.imagen_respuesta1.Size = new System.Drawing.Size(120, 142);
             this.imagen_respuesta1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -101,10 +106,11 @@
             // 
             // pregunta
             // 
+            this.pregunta.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pregunta.BorderRadius = 30;
             this.pregunta.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.pregunta.ForeColor = System.Drawing.Color.Black;
-            this.pregunta.Location = new System.Drawing.Point(119, 55);
+            this.pregunta.Location = new System.Drawing.Point(132, 55);
             this.pregunta.Name = "pregunta";
             this.pregunta.Pregunta = "";
             this.pregunta.Size = new System.Drawing.Size(462, 66);
@@ -114,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(708, 355);
+            this.ClientSize = new System.Drawing.Size(734, 461);
             this.Controls.Add(this.fondo);
             this.Name = "Quiz_Imagen";
             this.Text = "Quiz_Imagen";
