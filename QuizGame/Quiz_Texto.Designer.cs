@@ -61,7 +61,7 @@
             this.pregunta.Location = new System.Drawing.Point(140, 55);
             this.pregunta.Name = "pregunta";
             this.pregunta.Pregunta = "";
-            this.pregunta.Size = new System.Drawing.Size(462, 66);
+            this.pregunta.Size = new System.Drawing.Size(482, 74);
             this.pregunta.TabIndex = 5;
             // 
             // btn_respuesta4

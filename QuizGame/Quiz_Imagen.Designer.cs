@@ -110,10 +110,10 @@
             this.pregunta.BorderRadius = 30;
             this.pregunta.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.pregunta.ForeColor = System.Drawing.Color.Black;
-            this.pregunta.Location = new System.Drawing.Point(132, 55);
+            this.pregunta.Location = new System.Drawing.Point(120, 55);
             this.pregunta.Name = "pregunta";
             this.pregunta.Pregunta = "";
-            this.pregunta.Size = new System.Drawing.Size(462, 66);
+            this.pregunta.Size = new System.Drawing.Size(485, 80);
             this.pregunta.TabIndex = 5;
             // 
             // Quiz_Imagen
