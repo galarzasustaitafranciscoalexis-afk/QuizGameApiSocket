@@ -17,17 +17,26 @@ namespace QuizGame.ControlesPersonalizados
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            base.OnPaint(e);
+            e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
 
-            GraphicsPath path = new GraphicsPath();
-            path.AddRectangle(this.ClientRectangle);
+            using (GraphicsPath path = new GraphicsPath())
+            {
+                path.AddRectangle(this.ClientRectangle);
 
-            PathGradientBrush brush = new PathGradientBrush(path);
+                using (PathGradientBrush brush = new PathGradientBrush(path))
+                {
+                    brush.CenterColor = CenterColor;
+                    brush.SurroundColors = new Color[] { BorderColor };
 
-            brush.CenterColor = CenterColor;
-            brush.SurroundColors = new Color[] { BorderColor };
+                    e.Graphics.FillRectangle(brush, this.ClientRectangle);
+                }
+            }
+        }
 
-            e.Graphics.FillRectangle(brush, this.ClientRectangle);
+        protected override void OnResize(EventArgs e) 
+        {
+            base.OnResize(e);
+            this.Invalidate(); 
         }
     }
 }
