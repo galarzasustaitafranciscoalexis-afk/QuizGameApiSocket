@@ -41,7 +41,7 @@ namespace QuizGame.ControlesPersonalizados
         public PreguntaControl()
         {
             this.DoubleBuffered = true;
-            this.Font = new Font("Arial", 18, FontStyle.Bold);
+            this.Font = new Font("Arial", 10, FontStyle.Bold);
             this.ForeColor = Color.Black;
             this.Size = new Size(600, 150);
         }
@@ -95,13 +95,34 @@ namespace QuizGame.ControlesPersonalizados
             StringFormat formato = new StringFormat();
             formato.Alignment = StringAlignment.Center;
             formato.LineAlignment = StringAlignment.Center;
+            formato.FormatFlags = StringFormatFlags.LineLimit;
 
             Rectangle textArea = new Rectangle(10, 10, this.Width - 20, this.Height - 20);
 
             using (SolidBrush textBrush = new SolidBrush(this.ForeColor))
             {
-                e.Graphics.DrawString(pregunta, this.Font, textBrush, textArea, formato);
+                Font fuenteAjustada = AjustarFuente(e.Graphics, pregunta, textArea, this.Font);
+
+                e.Graphics.DrawString(pregunta, fuenteAjustada, textBrush, textArea, formato);
             }
+        }
+
+        private Font AjustarFuente(Graphics g, string texto, Rectangle area, Font fuenteOriginal)
+        {
+            float tamaño = fuenteOriginal.Size;
+
+            Font fuente = new Font(fuenteOriginal.FontFamily, tamaño, fuenteOriginal.Style);
+
+            SizeF size = g.MeasureString(texto, fuente, area.Width);
+
+            while ((size.Height > area.Height || size.Width > area.Width) && tamaño > 8)
+            {
+                tamaño -= 1;
+                fuente = new Font(fuenteOriginal.FontFamily, tamaño, fuenteOriginal.Style);
+                size = g.MeasureString(texto, fuente, area.Width);
+            }
+
+            return fuente;
         }
     }
 }
