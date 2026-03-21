@@ -48,17 +48,19 @@
             this.fondo.Controls.Add(this.btn_cat3);
             this.fondo.Controls.Add(this.btn_cat2);
             this.fondo.Controls.Add(this.btn_cat1);
-            this.fondo.Location = new System.Drawing.Point(-2, 0);
+            this.fondo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fondo.Location = new System.Drawing.Point(0, 0);
             this.fondo.Name = "fondo";
-            this.fondo.Size = new System.Drawing.Size(715, 367);
+            this.fondo.Size = new System.Drawing.Size(734, 461);
             this.fondo.TabIndex = 2;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(269, 22);
+            this.label1.Location = new System.Drawing.Point(304, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 55);
             this.label1.TabIndex = 5;
@@ -66,6 +68,7 @@
             // 
             // btn_cat5
             // 
+            this.btn_cat5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_cat5.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_cat5.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_cat5.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -75,7 +78,7 @@
             this.btn_cat5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat5.ForeColor = System.Drawing.Color.White;
-            this.btn_cat5.Location = new System.Drawing.Point(217, 283);
+            this.btn_cat5.Location = new System.Drawing.Point(258, 362);
             this.btn_cat5.Name = "btn_cat5";
             this.btn_cat5.Size = new System.Drawing.Size(247, 40);
             this.btn_cat5.TabIndex = 4;
@@ -86,6 +89,7 @@
             // 
             // btn_cat4
             // 
+            this.btn_cat4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_cat4.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_cat4.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_cat4.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -95,7 +99,7 @@
             this.btn_cat4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat4.ForeColor = System.Drawing.Color.White;
-            this.btn_cat4.Location = new System.Drawing.Point(217, 237);
+            this.btn_cat4.Location = new System.Drawing.Point(258, 290);
             this.btn_cat4.Name = "btn_cat4";
             this.btn_cat4.Size = new System.Drawing.Size(247, 40);
             this.btn_cat4.TabIndex = 3;
@@ -106,6 +110,7 @@
             // 
             // btn_cat3
             // 
+            this.btn_cat3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_cat3.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_cat3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_cat3.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -115,7 +120,7 @@
             this.btn_cat3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat3.ForeColor = System.Drawing.Color.White;
-            this.btn_cat3.Location = new System.Drawing.Point(217, 191);
+            this.btn_cat3.Location = new System.Drawing.Point(258, 227);
             this.btn_cat3.Name = "btn_cat3";
             this.btn_cat3.Size = new System.Drawing.Size(247, 40);
             this.btn_cat3.TabIndex = 2;
@@ -126,6 +131,7 @@
             // 
             // btn_cat2
             // 
+            this.btn_cat2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_cat2.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_cat2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_cat2.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -135,7 +141,7 @@
             this.btn_cat2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat2.ForeColor = System.Drawing.Color.White;
-            this.btn_cat2.Location = new System.Drawing.Point(217, 145);
+            this.btn_cat2.Location = new System.Drawing.Point(258, 163);
             this.btn_cat2.Name = "btn_cat2";
             this.btn_cat2.Size = new System.Drawing.Size(247, 40);
             this.btn_cat2.TabIndex = 1;
@@ -146,6 +152,7 @@
             // 
             // btn_cat1
             // 
+            this.btn_cat1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_cat1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_cat1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.btn_cat1.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -155,7 +162,7 @@
             this.btn_cat1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat1.ForeColor = System.Drawing.Color.White;
-            this.btn_cat1.Location = new System.Drawing.Point(217, 99);
+            this.btn_cat1.Location = new System.Drawing.Point(258, 101);
             this.btn_cat1.Name = "btn_cat1";
             this.btn_cat1.Size = new System.Drawing.Size(247, 40);
             this.btn_cat1.TabIndex = 0;
@@ -168,7 +175,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 363);
+            this.ClientSize = new System.Drawing.Size(734, 461);
             this.Controls.Add(this.fondo);
             this.Name = "Menu";
             this.Text = "Menu";

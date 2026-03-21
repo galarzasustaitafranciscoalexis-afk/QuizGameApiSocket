@@ -3,6 +3,7 @@ using QuizGame.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,10 +56,14 @@ namespace QuizGame.ClasesAdicionales
             Form siguiente;
 
             //Carga la pantalla adecuada a cada tipo de pregunta
+
             if (p.tipoRespuesta == "texto")
                 siguiente = new Quiz_Texto();
             else
                 siguiente = new Quiz_Imagen();
+
+            siguiente.StartPosition = FormStartPosition.Manual;
+            siguiente.Bounds = formActual.Bounds;
 
             siguiente.Show();
             formActual.Hide();
