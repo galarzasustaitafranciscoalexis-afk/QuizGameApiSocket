@@ -1,0 +1,186 @@
+[33mcommit 38bbffc9000c8a05f077239223d999bd03c5a699[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Mon Mar 16 11:58:40 2026 -0600
+
+    Agregadas las preguntas de la categoria 2, ademas del script de mysql con todos los registros
+
+[33mcommit 0c94c02c31c8bd35ec8a4393159314110f3d171a[m
+Merge: a76a269 dfae23f
+Author: galarzasustaitafranciscoalexis-afk <galarzasustaitafranciscoalexis@gmail.com>
+Date:   Mon Mar 16 10:21:08 2026 -0600
+
+    Merge pull request #7 from wilkes00/Historial-de-Partidas
+    
+    Historial de partidas
+
+[33mcommit dfae23f3e623f5dabce272c32634d80cb7f081f4[m[33m ([m[1;31morigin/Historial-de-Partidas[m[33m)[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Sun Mar 15 22:20:42 2026 -0600
+
+    Ahora se guarda correctamente el historial de partida en la base de datos
+
+[33mcommit 1cc8dac4db8fd86933156987b88f3c1bf9d1e4a8[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Sun Mar 15 20:29:09 2026 -0600
+
+    Correccion en el script de la base de datos, se hacia mal la referencia a la ruta de una imagen
+
+[33mcommit 667886af74618dc39c720b791affb536fe22d7eb[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Sun Mar 15 19:38:05 2026 -0600
+
+    script de mysql correcto, solamente faltan las preguntas de la categoria de Literatura
+
+[33mcommit a76a269fb813416838b77e87941c0065118077d4[m
+Merge: f2f6950 00cc22c
+Author: Oman León <oleonaguilar@gmail.com>
+Date:   Sun Mar 15 19:22:29 2026 -0600
+
+    Merge pull request #6 from wilkes00/CorrecionBugImagen
+    
+    Correcion de bug de imagen no encontrada.
+
+[33mcommit 00cc22cdf5c4c5cbf3141d7dc964cea4581354be[m[33m ([m[1;31morigin/CorrecionBugImagen[m[33m, [m[1;32mCorrecionBugImagen[m[33m)[m
+Author: Alexis <paquito123@correo.com>
+Date:   Sun Mar 15 18:37:56 2026 -0600
+
+    Correcion de bug de imagen no encontrada.
+
+[33mcommit f2f695048674d8b9930dea6a92445ae09a98daa1[m
+Merge: ff72654 acfacfc
+Author: Kevin <kevin@gmail.com>
+Date:   Sun Mar 15 14:39:38 2026 -0600
+
+    Merge branch 'main' of origin/main
+
+[33mcommit ff726549d6c90482934a0339eba4a51bc1a00e04[m
+Author: Kevin <kevin@gmail.com>
+Date:   Sun Mar 15 14:10:08 2026 -0600
+
+    Inserción de preguntas y respuestas en la base de datos
+
+[33mcommit acfacfc013bd295608085ecfbee60a1fbb7e8e58[m
+Merge: 4beed66 6efe9e7
+Author: Oman León <oleonaguilar@gmail.com>
+Date:   Sun Mar 15 11:56:19 2026 -0600
+
+    Merge pull request #5 from wilkes00/Con-Interfaz-BaseDatos
+    
+    Cambio de clases y creacion de nuevas clases
+
+[33mcommit 6efe9e7c5e8d514f9bdc88e88b4965344616b1f6[m[33m ([m[1;31morigin/Con-Interfaz-BaseDatos[m[33m)[m
+Author: Alexis <paquito123@correo.com>
+Date:   Sat Mar 14 14:58:33 2026 -0600
+
+    Cambio de clases de Categoria, Partida, PartidaDetalle, Prergunta,Respuesta en lugar de ser internal class partial, ahora son public class partial para el funcionamiento de las clases JuegoGlobal y ControlJuego. Dcumentacion de los metodos.
+
+[33mcommit 4beed66d4f7da42bbc15027a0ebee60176a5ba38[m
+Merge: 0c158d1 3dbde38
+Author: galarzasustaitafranciscoalexis-afk <galarzasustaitafranciscoalexis@gmail.com>
+Date:   Fri Mar 13 08:19:09 2026 -0600
+
+    Merge pull request #4 from wilkes00/ConexionBaseDatos
+    
+    Conexion base datos, metodo para recuperar preguntas
+
+[33mcommit 3dbde38b3471470a274a141eccff9ea21c2166fa[m[33m ([m[1;31morigin/ConexionBaseDatos[m[33m)[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Thu Mar 12 21:41:53 2026 -0600
+
+    Metodo para recuperar preguntas de manera aleatoria de una categoria implementado
+
+[33mcommit b2578f4d998ebffb4d81ee455db53701850e5ae8[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Thu Mar 12 18:09:01 2026 -0600
+
+    Se agrego el script .sql correcto de la base de datos
+
+[33mcommit 8f14ba09d08bb3b3c1b54eb4e559d133fc9835c5[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Thu Mar 12 00:33:22 2026 -0600
+
+    Creacion de clases modelos para las tablas de la base de datos, ademas de el script .sql
+
+[33mcommit 583fbb90a003749e62af276be4daadc5e0928189[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Mon Mar 9 20:21:42 2026 -0600
+
+    Clase ConexionBD creada, funciona la correctamente la conexion de la base de datos
+
+[33mcommit f89a1058894a748e89d7b6ad3b8c79d26e59d79e[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Mon Mar 9 20:11:49 2026 -0600
+
+    resolucion de conflictos con merge
+
+[33mcommit 0c158d11403052e0c6c1bc5c9020c19b8012487b[m
+Merge: 82aa426 4f1f8a4
+Author: Oman León <oleonaguilar@gmail.com>
+Date:   Mon Mar 9 20:03:16 2026 -0600
+
+    Merge pull request #3 from wilkes00/InterfacesCorregidas
+    
+    Interfaz del menú
+
+[33mcommit 4f1f8a4c8b199c975c8ca6ba7ea2c6d579c22a09[m[33m ([m[1;31morigin/InterfacesCorregidas[m[33m, [m[1;32mInterfacesCorregidas[m[33m)[m
+Author: Alexis <paquito123@correo.com>
+Date:   Mon Mar 9 18:32:53 2026 -0600
+
+    Interfaz del menú
+
+[33mcommit 82aa42660f2df81476a9c02733cb5504fb7a2989[m
+Merge: 9b0daac 57380a3
+Author: Oman León <oleonaguilar@gmail.com>
+Date:   Sun Mar 8 16:18:21 2026 -0600
+
+    Merge pull request #2 from wilkes00/InterfacesCorregidas
+    
+    Nota: las rutas absolutas de las imágenes hay que cambiarlas para que pueda compilar en otros dispositivos, aunque como prueba de la interfaz esta bien
+
+[33mcommit 57380a37f991b2f16b100930b2a166c625007c20[m
+Author: Alexis <paquito123@correo.com>
+Date:   Sun Mar 8 16:03:13 2026 -0600
+
+    Interfaces corregidas.
+
+[33mcommit 9134ced222e40749a7d17a873563c785d87ad576[m[33m ([m[1;31morigin/BotonesPersonalizados[m[33m, [m[1;32mBotonesPersonalizados[m[33m)[m
+Author: Alexis <paquito123@correo.com>
+Date:   Sun Mar 8 16:00:46 2026 -0600
+
+    Interfaces de texto e imagen creadas.
+
+[33mcommit b40c99430d0c241be25df7db32c8586a2e22a954[m
+Author: Alexis <paquito123@correo.com>
+Date:   Sun Mar 8 15:58:23 2026 -0600
+
+    Interfaz de pregutas de imagen terminadad, campo de pregunta bordest totalmente redondeados.
+
+[33mcommit 5f843003608fc39b06c2927f5776c062b9f74668[m
+Author: Alexis <paquito123@correo.com>
+Date:   Sun Mar 8 10:11:51 2026 -0600
+
+    Cuadro de pregunta bordes redondeados.
+
+[33mcommit 73e46eb0069e8f9c1edf7b54bcd0b3433ba600d0[m
+Author: Alexis <paquito123@correo.com>
+Date:   Sat Mar 7 20:01:31 2026 -0600
+
+    Boton, fondo, recipiente de pregunta y picture personalizados. Interfaz de preguntas de texto semi terminada.
+
+[33mcommit 9b0daac35905f391b08e89cea7618ae9dcaad7ff[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Fri Mar 6 18:15:45 2026 -0600
+
+    Agregado MySql.Data con Nuget a la solucion
+
+[33mcommit 54b7a32fa20eca8cf6af81e8a06fa175a7bc69eb[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Fri Mar 6 18:09:53 2026 -0600
+
+    Agregar archivos de proyecto.
+
+[33mcommit 34cc5c0c22d3d78c29f48632ecf2c0a8a76145fb[m
+Author: wilkes00 <oleonaguilar@gmail.com>
+Date:   Fri Mar 6 18:09:51 2026 -0600
+
+    Agregar .gitattributes, .gitignore y README.md.
