@@ -15,7 +15,7 @@ namespace QuizGame.Clases_base_datos
 
         public ConexionBD()
         {
-            connCadena = "server=localhost;user=root;database=quiz_game;port=3306;password=HolaMundo;";
+            connCadena = "server=localhost;user=root;database=quiz_game;port=3306;password=root;";
         }
         /// <summary>
         /// Retorna una lista de 10 preguntas de una categoria especifica
