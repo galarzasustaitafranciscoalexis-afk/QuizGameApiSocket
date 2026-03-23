@@ -11,6 +11,7 @@ namespace QuizGame.ClasesAdicionales
     {
         //Lista simple de preguntas
         public static List<Pregunta> preguntas = new List<Pregunta>();
+        //Guarda id_pregunta, id_categoria,textp_pregunta, tipo-respuesta
 
         //Pocision de pregunta del arreglo
         public static int indicePreguntaActual = 0;
@@ -23,5 +24,7 @@ namespace QuizGame.ClasesAdicionales
         
         //lista para el historial de partida
         public static List<PartidaDetalle> detallesAcumulados = new List<PartidaDetalle>();
+
+        //Guarda id_detalle, id_partida, id_pregunta, fue_correcta
     }
 }

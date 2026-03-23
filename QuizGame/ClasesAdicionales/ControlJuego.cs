@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizGame.ClasesAdicionales;
 
 namespace QuizGame.ClasesAdicionales
 {
@@ -34,18 +35,16 @@ namespace QuizGame.ClasesAdicionales
                         "Error de conexión");
                 }
 
+                //Limpiar los arreglos de la partida (Lista de preguntas y lista de historial), quitar message box
 
-                MessageBox.Show("Juego terminado\nPuntaje: " + JuegoGlobal.puntaje);
+                // Mostrar ventana de estadísticas
+                Estadisticas stats = new Estadisticas();
+                stats.StartPosition = FormStartPosition.Manual;
+                stats.Bounds = formActual.Bounds;
 
-                //Reiniciar variables del juego
-                JuegoGlobal.indicePreguntaActual = 0;
-                JuegoGlobal.puntaje = 0;
-                JuegoGlobal.preguntas.Clear();
+                stats.Show();
 
-                //Menú
-                Menu menu = new Menu();
-                menu.Show();
-
+                // Cerrar formulario actual
                 formActual.Close();
                 return;
             }
