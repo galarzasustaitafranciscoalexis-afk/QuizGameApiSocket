@@ -178,7 +178,7 @@
             this.ClientSize = new System.Drawing.Size(734, 461);
             this.Controls.Add(this.fondo);
             this.Name = "Menu";
-            this.Text = "Menu";
+            this.Text = "3";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.fondo.ResumeLayout(false);
             this.fondo.PerformLayout();

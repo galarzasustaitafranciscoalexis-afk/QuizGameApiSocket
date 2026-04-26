@@ -50,5 +50,7 @@ namespace QuizGame
                 MessageBox.Show("No fue posible conectar con el servidor.");
             }
         }
-    }
+
+    }    
 }
+
