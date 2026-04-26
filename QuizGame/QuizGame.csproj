@@ -134,6 +134,8 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelosSocket\ClienteSocket.cs" />
+    <Compile Include="ModelosSocket\ConexionGlobal.cs" />
     <Compile Include="Modelos\Categoria.cs" />
     <Compile Include="Modelos\Partida.cs" />
     <Compile Include="Modelos\PartidaDetalle.cs" />
