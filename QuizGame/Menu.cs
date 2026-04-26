@@ -20,6 +20,7 @@ namespace QuizGame
         public Menu()
         {
             InitializeComponent();
+            ConexionGlobal.Cliente.OnPreguntasRecibidas += MostrarPreguntas;
         }
         void iniciarJuego(int categoria)
         {
@@ -88,6 +89,31 @@ namespace QuizGame
             //Eleccion de categoria
             //iniciarJuego(5);
             ConexionGlobal.Cliente.Enviar("INICIAR_PARTIDA:" + 5);
+        }
+
+        private void MostrarPreguntas(List<Pregunta> preguntas)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => MostrarPreguntas(preguntas)));
+                return;
+            }
+
+            JuegoGlobal.preguntas = preguntas;
+            JuegoGlobal.indicePreguntaActual = 0;
+
+            this.Hide();
+
+            if (preguntas[0].tipoRespuesta == "texto")
+            {
+                Quiz_Texto qt = new Quiz_Texto();
+                qt.Show();
+            }
+            else
+            {
+                Quiz_Imagen qi = new Quiz_Imagen();
+                qi.Show();
+            }
         }
     }
 }

@@ -50,7 +50,7 @@ namespace QuizGame.Clases_base_datos
                                 Pregunta nuevaPregunta = new Pregunta
                                 {
                                     idPregunta = Convert.ToInt32(reader["id_pregunta"]),
-                                    idCategoria = idCategoriaElegida,
+                                    //idCategoria = idCategoriaElegida,
                                     textoPregunta = reader["texto_pregunta"].ToString(),
                                     tipoRespuesta = reader["tipo_respuesta"].ToString()
                                 };
@@ -81,7 +81,7 @@ namespace QuizGame.Clases_base_datos
                                     Respuesta nuevaRespuesta = new Respuesta
                                     {
                                         idRespuesta = Convert.ToInt32(readerResp["id_respuesta"]),
-                                        idPregunta = preguntaActual.idPregunta,
+                                        //idPregunta = preguntaActual.idPregunta,
                                         //manejo seguro de nulos, en caso de que texto_respuesta o ruta_imagen sea null
                                         textoRespuesta = readerResp["texto_respuesta"] != DBNull.Value ?
                                                         readerResp["texto_respuesta"].ToString() : null,
