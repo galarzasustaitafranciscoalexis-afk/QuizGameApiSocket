@@ -20,7 +20,7 @@ namespace QuizGame
 
         private void btn_multi_Click(object sender, EventArgs e)
         {
-            bool conectado = ConexionGlobal.Cliente.Conectar();
+            bool conectado = ConexionGlobal.cliente.Conectar();
 
             if (conectado)
             {
@@ -35,5 +35,7 @@ namespace QuizGame
                 MessageBox.Show("No fue posible conectar con el servidor.");
             }
         }
-    }
+
+    }    
 }
+
