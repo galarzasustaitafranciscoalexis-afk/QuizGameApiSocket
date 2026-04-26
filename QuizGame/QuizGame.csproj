@@ -110,8 +110,12 @@
     <Compile Include="BotonesPersonalizados\PreguntaTexto.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BotonesPersonalizados\TextBoxRedondeado.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ClasesAdicionales\ControlJuego.cs" />
     <Compile Include="ClasesAdicionales\JuegoGlobal.cs" />
+    <Compile Include="ClasesAdicionales\UsuarioGlobal.cs" />
     <Compile Include="Clases_base_datos\ConexionBD.cs" />
     <Compile Include="Estadisticas.cs">
       <SubType>Form</SubType>

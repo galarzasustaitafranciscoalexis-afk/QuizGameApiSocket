@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.label1 = new QuizGame.ControlesPersonalizados.FondoRadial();
+            this.name = new System.Windows.Forms.Label();
+            this.UserName = new QuizGame.ControlesPersonalizados.TextBoxRedondeado();
             this.btn_multi = new QuizGame.BotonesPersonalizados.Boton();
             this.lbEsperando = new System.Windows.Forms.Label();
             this.label1.SuspendLayout();
@@ -38,6 +40,8 @@
             // 
             this.label1.BorderColor = System.Drawing.Color.MediumPurple;
             this.label1.CenterColor = System.Drawing.Color.PaleTurquoise;
+            this.label1.Controls.Add(this.name);
+            this.label1.Controls.Add(this.UserName);
             this.label1.Controls.Add(this.btn_multi);
             this.label1.Controls.Add(this.lbEsperando);
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -45,6 +49,31 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(800, 450);
             this.label1.TabIndex = 4;
+            // 
+            // name
+            // 
+            this.name.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.name.AutoSize = true;
+            this.name.BackColor = System.Drawing.Color.Transparent;
+            this.name.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Location = new System.Drawing.Point(194, 185);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(80, 22);
+            this.name.TabIndex = 21;
+            this.name.Text = "Usuario";
+            this.name.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // UserName
+            // 
+            this.UserName.BorderRadius = 20;
+            this.UserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.UserName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserName.Location = new System.Drawing.Point(292, 185);
+            this.UserName.Multiline = true;
+            this.UserName.Name = "UserName";
+            this.UserName.Size = new System.Drawing.Size(223, 22);
+            this.UserName.TabIndex = 20;
+            this.UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_multi
             // 
@@ -58,7 +87,7 @@
             this.btn_multi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_multi.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_multi.ForeColor = System.Drawing.Color.White;
-            this.btn_multi.Location = new System.Drawing.Point(338, 207);
+            this.btn_multi.Location = new System.Drawing.Point(333, 242);
             this.btn_multi.Name = "btn_multi";
             this.btn_multi.Size = new System.Drawing.Size(124, 63);
             this.btn_multi.TabIndex = 19;
@@ -99,5 +128,7 @@
         private ControlesPersonalizados.FondoRadial label1;
         private System.Windows.Forms.Label lbEsperando;
         private BotonesPersonalizados.Boton btn_multi;
+        private System.Windows.Forms.Label name;
+        private ControlesPersonalizados.TextBoxRedondeado UserName;
     }
 }
