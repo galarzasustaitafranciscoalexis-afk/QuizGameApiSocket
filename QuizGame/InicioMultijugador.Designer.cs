@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new QuizGame.ControlesPersonalizados.FondoRadial();
-            this.btn_estaditicas = new QuizGame.BotonesPersonalizados.Boton();
+            this.btn_multi = new QuizGame.BotonesPersonalizados.Boton();
             this.lbEsperando = new System.Windows.Forms.Label();
             this.label1.SuspendLayout();
             this.SuspendLayout();
@@ -38,7 +38,7 @@
             // 
             this.label1.BorderColor = System.Drawing.Color.MediumPurple;
             this.label1.CenterColor = System.Drawing.Color.PaleTurquoise;
-            this.label1.Controls.Add(this.btn_estaditicas);
+            this.label1.Controls.Add(this.btn_multi);
             this.label1.Controls.Add(this.lbEsperando);
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(0, 0);
@@ -46,25 +46,26 @@
             this.label1.Size = new System.Drawing.Size(800, 450);
             this.label1.TabIndex = 4;
             // 
-            // btn_estaditicas
+            // btn_multi
             // 
-            this.btn_estaditicas.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_estaditicas.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_estaditicas.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_estaditicas.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_estaditicas.BorderRadius = 17;
-            this.btn_estaditicas.BorderSize = 0;
-            this.btn_estaditicas.FlatAppearance.BorderSize = 0;
-            this.btn_estaditicas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_estaditicas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_estaditicas.ForeColor = System.Drawing.Color.White;
-            this.btn_estaditicas.Location = new System.Drawing.Point(338, 207);
-            this.btn_estaditicas.Name = "btn_estaditicas";
-            this.btn_estaditicas.Size = new System.Drawing.Size(124, 63);
-            this.btn_estaditicas.TabIndex = 19;
-            this.btn_estaditicas.Text = "Iniciar partida ";
-            this.btn_estaditicas.TextColor = System.Drawing.Color.White;
-            this.btn_estaditicas.UseVisualStyleBackColor = false;
+            this.btn_multi.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_multi.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_multi.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_multi.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_multi.BorderRadius = 17;
+            this.btn_multi.BorderSize = 0;
+            this.btn_multi.FlatAppearance.BorderSize = 0;
+            this.btn_multi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_multi.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_multi.ForeColor = System.Drawing.Color.White;
+            this.btn_multi.Location = new System.Drawing.Point(338, 207);
+            this.btn_multi.Name = "btn_multi";
+            this.btn_multi.Size = new System.Drawing.Size(124, 63);
+            this.btn_multi.TabIndex = 19;
+            this.btn_multi.Text = "Iniciar partida ";
+            this.btn_multi.TextColor = System.Drawing.Color.White;
+            this.btn_multi.UseVisualStyleBackColor = false;
+            this.btn_multi.Click += new System.EventHandler(this.btn_multi_Click);
             // 
             // lbEsperando
             // 
@@ -97,6 +98,6 @@
 
         private ControlesPersonalizados.FondoRadial label1;
         private System.Windows.Forms.Label lbEsperando;
-        private BotonesPersonalizados.Boton btn_estaditicas;
+        private BotonesPersonalizados.Boton btn_multi;
     }
 }

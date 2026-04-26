@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuizGame.Modelos;
 
 namespace QuizGame
 {
@@ -15,6 +16,24 @@ namespace QuizGame
         public InicioMultijugador()
         {
             InitializeComponent();
+        }
+
+        private void btn_multi_Click(object sender, EventArgs e)
+        {
+            bool conectado = ConexionGlobal.cliente.Conectar();
+
+            if (conectado)
+            {
+                MessageBox.Show("Conectado al servidor correctamente.");
+
+                Menu ventana = new Menu();
+                ventana.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("No fue posible conectar con el servidor.");
+            }
         }
     }
 }
