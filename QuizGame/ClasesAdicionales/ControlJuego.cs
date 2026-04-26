@@ -27,6 +27,16 @@ namespace QuizGame.ClasesAdicionales
                 partidaTerminada.fecha = DateTime.Now;
                 partidaTerminada.detalles = JuegoGlobal.detallesAcumulados;
 
+                string texto = "";
+
+                foreach (PartidaDetalle d in JuegoGlobal.detallesAcumulados)
+                {
+                    texto += "Pregunta ID: " + d.idPregunta +
+                             " | Correcta: " + d.fueCorrecta + "\n";
+                }
+
+                MessageBox.Show(texto, "Detalle de Partida");
+
                 ConexionBD db = new ConexionBD();
                 if (!db.guardarPartida(partidaTerminada))
                 {
