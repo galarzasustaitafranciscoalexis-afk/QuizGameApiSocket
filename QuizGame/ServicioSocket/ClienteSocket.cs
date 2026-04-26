@@ -9,7 +9,7 @@ using System.Text;
 
 namespace QuizGame.ModelosSocket
 {
-    class ClienteSocket
+    public class ClienteSocket
     {
         private TcpClient cliente;
         private NetworkStream stream;
@@ -67,13 +67,11 @@ namespace QuizGame.ModelosSocket
             }
         }
 
-        public void Enviar(string mensaje)
+        public bool Enviar(string mensaje)
         {
-            if (stream != null)
-            {
-                byte[] data = Encoding.UTF8.GetBytes(mensaje);
-                stream.Write(data, 0, data.Length);
-            }
+            byte[] data = Encoding.UTF8.GetBytes(mensaje + "\n");
+            stream.Write(data, 0, data.Length);
+            return true;
         }
 
         public string Recibir()

@@ -20,7 +20,7 @@ namespace QuizGame
 
         private void btn_multi_Click(object sender, EventArgs e)
         {
-            bool conectado = ConexionGlobal.cliente.Conectar();
+            bool conectado = ConexionGlobal.Cliente.Conectar();
 
             if (conectado)
             {

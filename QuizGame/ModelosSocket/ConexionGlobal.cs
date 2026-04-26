@@ -9,8 +9,9 @@ using QuizGame.ModelosSocket;
 
 namespace QuizGame
 {
-    internal class ConexionGlobal
+    public static class ConexionGlobal
     {
-        public static ClienteSocket cliente = new ClienteSocket();
+        public static ClienteSocket Cliente = new ClienteSocket();
+
     }
 }
