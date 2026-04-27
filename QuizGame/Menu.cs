@@ -1,17 +1,18 @@
-﻿using QuizGame.Clases_base_datos;
+﻿using QuizGame;
+using QuizGame.Clases_base_datos;
 using QuizGame.ClasesAdicionales;
 using QuizGame.Modelos;
+using QuizGame.ServicioSocket;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuizGame;
-using QuizGame.ServicioSocket;
 
 namespace QuizGame
 {
@@ -114,6 +115,32 @@ namespace QuizGame
                 Quiz_Imagen qi = new Quiz_Imagen();
                 qi.Show();
             }
+        }
+
+        void BloquearBotones()
+        {
+            btn_cat1.Enabled = false;
+            btn_cat2.Enabled = false;
+            btn_cat3.Enabled = false;
+            btn_cat4.Enabled = false;
+            btn_cat5.Enabled = false;
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            int puntos = 0;
+            string texto= "Esperando a los demas jugadores";
+
+            while (puntos<5)
+            {
+                puntos++;
+
+                if (puntos > 3)
+                    puntos = 0;
+
+                lbEstado.Text = texto + new string('.', puntos);
+            }
+              
         }
     }
 }

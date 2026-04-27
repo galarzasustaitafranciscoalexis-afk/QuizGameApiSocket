@@ -15,6 +15,9 @@ namespace QuizGame
 {
     public partial class Quiz_Texto : Form
     {
+        int tiempo = 10;
+        bool respuesta = false;
+
         public Quiz_Texto()
         {
             InitializeComponent();
@@ -134,6 +137,26 @@ namespace QuizGame
             JuegoGlobal.indicePreguntaActual = 0;
 
             //mostrarPregunta();
+        }
+
+        private void TiempoEspera_Tick(object sender, EventArgs e)
+        {
+            tiempo--;
+            lbContador.Text = tiempo.ToString();
+
+            if (tiempo <= 0)
+            {
+                TiempoEspera.Stop();
+
+            }
+        }
+
+        void bloquearBotones()
+        {
+            btn_respuesta1.Enabled = false;
+            btn_respuesta2.Enabled = false;
+            btn_respuesta3.Enabled = false;
+            btn_respuesta4.Enabled = false;
         }
     }
 }

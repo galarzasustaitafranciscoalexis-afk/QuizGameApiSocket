@@ -15,6 +15,9 @@ namespace QuizGame
 {
     public partial class Quiz_Imagen : Form
     {
+        int tiempo = 10;
+        bool respuesta = false;
+
         public Quiz_Imagen()
         {
             InitializeComponent();
@@ -47,6 +50,9 @@ namespace QuizGame
 
         void verificarRespuesta(object sender)
         {
+            respuesta = true;
+            bloquearBotones();
+
             PictureBox pic = (PictureBox)sender;
 
             Respuesta r = (Respuesta)pic.Tag;
@@ -91,5 +97,38 @@ namespace QuizGame
         {
             verificarRespuesta(sender);
         }
+
+     
+
+        private void TiempoEspera_Tick(object sender, EventArgs e)
+        {
+            tiempo--;
+            lbContador.Text = tiempo.ToString();
+
+            if (tiempo <= 0)
+            {
+                TiempoEspera.Stop();
+                if(respuesta == false)
+                {
+                    PartidaDetalle detalle = new PartidaDetalle();
+                    detalle.idPregunta = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual].idPregunta;
+                   //detalle.fueCorrecta = null;
+                    JuegoGlobal.detallesAcumulados.Add(detalle);
+
+                    JuegoGlobal.indicePreguntaActual++;
+
+                    ControlJuego.mostrarSiguientePregunta(this);
+                }
+            }
+        }
+
+        void bloquearBotones()
+        {
+            imagen_respuesta1.Enabled = false;
+            imagen_respuesta2.Enabled = false;
+            imagen_respuesta3.Enabled = false;
+            imagen_respuesta4.Enabled = false;
+        }
+
     }
 }

@@ -22,25 +22,13 @@ namespace QuizGame
         private void btn_multi_Click(object sender, EventArgs e)
         {
             string nombre = UserName.Text.Trim();
-
-            if (nombre == "")
-            {
-                MessageBox.Show("Ingresa un nombre de usuario",
-                                "Aviso",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Warning);
-
-                UserName.Focus();
-                return;
-            }
-
             UsuarioGlobal.NombreUsuario = nombre;
             bool conectado = ConexionGlobal.Cliente.Conectar();
 
             if (conectado)
             {
-                MessageBox.Show("Conectado al servidor correctamente.");
-
+             //   MessageBox.Show("Conectado al servidor correctamente.");
+                this.Close();
                 Menu ventana = new Menu();
                 ventana.Show();
                 this.Hide();
@@ -51,6 +39,18 @@ namespace QuizGame
             }
         }
 
+        private void UserName_TextChanged(object sender, EventArgs e)
+        {
+            if (UserName.Text == "")
+            {
+                btn_multi.Enabled = false; 
+                return;
+            }
+            else
+            {
+                btn_multi.Enabled = true;
+            }
+        }
     }    
 }
 

@@ -16,5 +16,10 @@ namespace QuizGame
         {
             InitializeComponent();
         }
+
+        private void btn_estaditicas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

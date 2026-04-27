@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.fondo = new QuizGame.ControlesPersonalizados.FondoRadial();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnPuntos3 = new QuizGame.BotonesPersonalizados.Boton();
-            this.btnPuntos1 = new QuizGame.BotonesPersonalizados.Boton();
-            this.btnPuntos2 = new QuizGame.BotonesPersonalizados.Boton();
-            this.lbPrimerLugar = new System.Windows.Forms.Label();
-            this.lbSegundoLugar = new System.Windows.Forms.Label();
-            this.lbTercerLugar = new System.Windows.Forms.Label();
             this.btn_estaditicas = new QuizGame.BotonesPersonalizados.Boton();
+            this.lbTercerLugar = new System.Windows.Forms.Label();
+            this.lbSegundoLugar = new System.Windows.Forms.Label();
+            this.lbPrimerLugar = new System.Windows.Forms.Label();
+            this.btnPuntos2 = new QuizGame.BotonesPersonalizados.Boton();
+            this.btnPuntos1 = new QuizGame.BotonesPersonalizados.Boton();
+            this.btnPuntos3 = new QuizGame.BotonesPersonalizados.Boton();
+            this.label1 = new System.Windows.Forms.Label();
             this.fondo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,55 +58,62 @@
             this.fondo.Size = new System.Drawing.Size(800, 450);
             this.fondo.TabIndex = 2;
             // 
-            // label1
+            // btn_estaditicas
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(328, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 55);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Podio";
+            this.btn_estaditicas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btn_estaditicas.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_estaditicas.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btn_estaditicas.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_estaditicas.BorderRadius = 17;
+            this.btn_estaditicas.BorderSize = 0;
+            this.btn_estaditicas.FlatAppearance.BorderSize = 0;
+            this.btn_estaditicas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_estaditicas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_estaditicas.ForeColor = System.Drawing.Color.White;
+            this.btn_estaditicas.Location = new System.Drawing.Point(664, 229);
+            this.btn_estaditicas.Name = "btn_estaditicas";
+            this.btn_estaditicas.Size = new System.Drawing.Size(124, 36);
+            this.btn_estaditicas.TabIndex = 18;
+            this.btn_estaditicas.Text = "Estadisticas";
+            this.btn_estaditicas.TextColor = System.Drawing.Color.White;
+            this.btn_estaditicas.UseVisualStyleBackColor = false;
+            this.btn_estaditicas.Click += new System.EventHandler(this.btn_estaditicas_Click);
             // 
-            // btnPuntos3
+            // lbTercerLugar
             // 
-            this.btnPuntos3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnPuntos3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnPuntos3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnPuntos3.BorderRadius = 40;
-            this.btnPuntos3.BorderSize = 0;
-            this.btnPuntos3.FlatAppearance.BorderSize = 0;
-            this.btnPuntos3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPuntos3.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPuntos3.ForeColor = System.Drawing.Color.White;
-            this.btnPuntos3.Location = new System.Drawing.Point(162, 229);
-            this.btnPuntos3.Name = "btnPuntos3";
-            this.btnPuntos3.Size = new System.Drawing.Size(146, 221);
-            this.btnPuntos3.TabIndex = 12;
-            this.btnPuntos3.Text = "100";
-            this.btnPuntos3.TextColor = System.Drawing.Color.White;
-            this.btnPuntos3.UseVisualStyleBackColor = false;
+            this.lbTercerLugar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbTercerLugar.AutoSize = true;
+            this.lbTercerLugar.BackColor = System.Drawing.Color.Transparent;
+            this.lbTercerLugar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTercerLugar.Location = new System.Drawing.Point(156, 181);
+            this.lbTercerLugar.Name = "lbTercerLugar";
+            this.lbTercerLugar.Size = new System.Drawing.Size(156, 33);
+            this.lbTercerLugar.TabIndex = 17;
+            this.lbTercerLugar.Text = "Ganador1";
             // 
-            // btnPuntos1
+            // lbSegundoLugar
             // 
-            this.btnPuntos1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnPuntos1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnPuntos1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnPuntos1.BorderRadius = 40;
-            this.btnPuntos1.BorderSize = 0;
-            this.btnPuntos1.FlatAppearance.BorderSize = 0;
-            this.btnPuntos1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPuntos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPuntos1.ForeColor = System.Drawing.Color.White;
-            this.btnPuntos1.Location = new System.Drawing.Point(329, 149);
-            this.btnPuntos1.Name = "btnPuntos1";
-            this.btnPuntos1.Size = new System.Drawing.Size(146, 298);
-            this.btnPuntos1.TabIndex = 13;
-            this.btnPuntos1.Text = "100";
-            this.btnPuntos1.TextColor = System.Drawing.Color.White;
-            this.btnPuntos1.UseVisualStyleBackColor = false;
+            this.lbSegundoLugar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbSegundoLugar.AutoSize = true;
+            this.lbSegundoLugar.BackColor = System.Drawing.Color.Transparent;
+            this.lbSegundoLugar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSegundoLugar.Location = new System.Drawing.Point(496, 163);
+            this.lbSegundoLugar.Name = "lbSegundoLugar";
+            this.lbSegundoLugar.Size = new System.Drawing.Size(156, 33);
+            this.lbSegundoLugar.TabIndex = 16;
+            this.lbSegundoLugar.Text = "Ganador2";
+            // 
+            // lbPrimerLugar
+            // 
+            this.lbPrimerLugar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbPrimerLugar.AutoSize = true;
+            this.lbPrimerLugar.BackColor = System.Drawing.Color.Transparent;
+            this.lbPrimerLugar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrimerLugar.Location = new System.Drawing.Point(329, 103);
+            this.lbPrimerLugar.Name = "lbPrimerLugar";
+            this.lbPrimerLugar.Size = new System.Drawing.Size(156, 33);
+            this.lbPrimerLugar.TabIndex = 15;
+            this.lbPrimerLugar.Text = "Ganador1";
             // 
             // btnPuntos2
             // 
@@ -127,61 +134,55 @@
             this.btnPuntos2.TextColor = System.Drawing.Color.White;
             this.btnPuntos2.UseVisualStyleBackColor = false;
             // 
-            // lbPrimerLugar
+            // btnPuntos1
             // 
-            this.lbPrimerLugar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbPrimerLugar.AutoSize = true;
-            this.lbPrimerLugar.BackColor = System.Drawing.Color.Transparent;
-            this.lbPrimerLugar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrimerLugar.Location = new System.Drawing.Point(329, 103);
-            this.lbPrimerLugar.Name = "lbPrimerLugar";
-            this.lbPrimerLugar.Size = new System.Drawing.Size(156, 33);
-            this.lbPrimerLugar.TabIndex = 15;
-            this.lbPrimerLugar.Text = "Ganador1";
+            this.btnPuntos1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnPuntos1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnPuntos1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPuntos1.BorderRadius = 40;
+            this.btnPuntos1.BorderSize = 0;
+            this.btnPuntos1.FlatAppearance.BorderSize = 0;
+            this.btnPuntos1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPuntos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPuntos1.ForeColor = System.Drawing.Color.White;
+            this.btnPuntos1.Location = new System.Drawing.Point(329, 149);
+            this.btnPuntos1.Name = "btnPuntos1";
+            this.btnPuntos1.Size = new System.Drawing.Size(146, 298);
+            this.btnPuntos1.TabIndex = 13;
+            this.btnPuntos1.Text = "100";
+            this.btnPuntos1.TextColor = System.Drawing.Color.White;
+            this.btnPuntos1.UseVisualStyleBackColor = false;
             // 
-            // lbSegundoLugar
+            // btnPuntos3
             // 
-            this.lbSegundoLugar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbSegundoLugar.AutoSize = true;
-            this.lbSegundoLugar.BackColor = System.Drawing.Color.Transparent;
-            this.lbSegundoLugar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSegundoLugar.Location = new System.Drawing.Point(496, 163);
-            this.lbSegundoLugar.Name = "lbSegundoLugar";
-            this.lbSegundoLugar.Size = new System.Drawing.Size(156, 33);
-            this.lbSegundoLugar.TabIndex = 16;
-            this.lbSegundoLugar.Text = "Ganador2";
+            this.btnPuntos3.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnPuntos3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnPuntos3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnPuntos3.BorderRadius = 40;
+            this.btnPuntos3.BorderSize = 0;
+            this.btnPuntos3.FlatAppearance.BorderSize = 0;
+            this.btnPuntos3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPuntos3.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPuntos3.ForeColor = System.Drawing.Color.White;
+            this.btnPuntos3.Location = new System.Drawing.Point(162, 229);
+            this.btnPuntos3.Name = "btnPuntos3";
+            this.btnPuntos3.Size = new System.Drawing.Size(146, 221);
+            this.btnPuntos3.TabIndex = 12;
+            this.btnPuntos3.Text = "100";
+            this.btnPuntos3.TextColor = System.Drawing.Color.White;
+            this.btnPuntos3.UseVisualStyleBackColor = false;
             // 
-            // lbTercerLugar
+            // label1
             // 
-            this.lbTercerLugar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbTercerLugar.AutoSize = true;
-            this.lbTercerLugar.BackColor = System.Drawing.Color.Transparent;
-            this.lbTercerLugar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTercerLugar.Location = new System.Drawing.Point(156, 181);
-            this.lbTercerLugar.Name = "lbTercerLugar";
-            this.lbTercerLugar.Size = new System.Drawing.Size(156, 33);
-            this.lbTercerLugar.TabIndex = 17;
-            this.lbTercerLugar.Text = "Ganador1";
-            // 
-            // btn_estaditicas
-            // 
-            this.btn_estaditicas.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btn_estaditicas.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_estaditicas.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btn_estaditicas.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btn_estaditicas.BorderRadius = 17;
-            this.btn_estaditicas.BorderSize = 0;
-            this.btn_estaditicas.FlatAppearance.BorderSize = 0;
-            this.btn_estaditicas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_estaditicas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_estaditicas.ForeColor = System.Drawing.Color.White;
-            this.btn_estaditicas.Location = new System.Drawing.Point(664, 229);
-            this.btn_estaditicas.Name = "btn_estaditicas";
-            this.btn_estaditicas.Size = new System.Drawing.Size(124, 36);
-            this.btn_estaditicas.TabIndex = 18;
-            this.btn_estaditicas.Text = "Estadisticas";
-            this.btn_estaditicas.TextColor = System.Drawing.Color.White;
-            this.btn_estaditicas.UseVisualStyleBackColor = false;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(328, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 55);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Podio";
             // 
             // Ganadores
             // 

@@ -74,6 +74,7 @@
             this.UserName.Size = new System.Drawing.Size(223, 22);
             this.UserName.TabIndex = 20;
             this.UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UserName.TextChanged += new System.EventHandler(this.UserName_TextChanged);
             // 
             // btn_multi
             // 
@@ -83,6 +84,7 @@
             this.btn_multi.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btn_multi.BorderRadius = 17;
             this.btn_multi.BorderSize = 0;
+            this.btn_multi.Enabled = false;
             this.btn_multi.FlatAppearance.BorderSize = 0;
             this.btn_multi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_multi.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
