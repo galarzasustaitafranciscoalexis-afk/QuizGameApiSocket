@@ -18,11 +18,17 @@ namespace QuizGame
 {
     public partial class Menu : Form
     {
+        int puntos = 0;
+        string texto = "Esperando a los demas jugadores";
+
         public Menu()
         {
             InitializeComponent();
             ConexionGlobal.Cliente.OnPreguntasRecibidas += MostrarPreguntas;
+           
+
         }
+
         void iniciarJuego(int categoria)
         {
             ConexionBD db = new ConexionBD();
@@ -54,7 +60,8 @@ namespace QuizGame
 
         private void Menu_Load(object sender, EventArgs e)
         {
-
+            ConexionGlobal.Cliente.Enviar("PARTIDA_INICIADA");
+            VerificaPartidaIniciada();
         }
 
         private void btn_cat1_Click_1(object sender, EventArgs e)
@@ -117,6 +124,18 @@ namespace QuizGame
             }
         }
 
+        void VerificaPartidaIniciada(string partidaIniciada)
+        {
+
+            if (partidaIniciada == "true")
+            {
+                BloquearBotones();
+                timer.Start();
+            }
+
+
+        }
+
         void BloquearBotones()
         {
             btn_cat1.Enabled = false;
@@ -128,19 +147,13 @@ namespace QuizGame
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            int puntos = 0;
-            string texto= "Esperando a los demas jugadores";
+            puntos++;
 
-            while (puntos<5)
-            {
-                puntos++;
+            if (puntos > 3)
+                puntos = 0;
 
-                if (puntos > 3)
-                    puntos = 0;
+            lbEstado.Text = texto + new string('.', puntos);
 
-                lbEstado.Text = texto + new string('.', puntos);
-            }
-              
         }
     }
 }

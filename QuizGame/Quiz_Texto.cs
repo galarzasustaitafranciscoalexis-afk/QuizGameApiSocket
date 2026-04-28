@@ -23,6 +23,7 @@ namespace QuizGame
             InitializeComponent();
             //ConexionGlobal.Cliente.OnPreguntasRecibidas += MostrarPreguntas;
             mostrarPregunta();
+            TiempoEspera.Start();
 
         }
         //Metodo para cargar las preguntas y respuestas a sus respectivos contenedores
@@ -58,6 +59,7 @@ namespace QuizGame
         //Verificar la respuesta
         void verificarRespuesta(object sender)
         {
+            bloquearBotones();
             Button boton = (Button)sender;
             Respuesta r = (Respuesta)boton.Tag;
 
@@ -147,7 +149,15 @@ namespace QuizGame
             if (tiempo <= 0)
             {
                 TiempoEspera.Stop();
-
+                if (respuesta == false)
+                {
+                    PartidaDetalle detalle = new PartidaDetalle();
+                    detalle.idPregunta = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual].idPregunta;
+                    detalle.fueCorrecta = false;
+                    JuegoGlobal.detallesAcumulados.Add(detalle);
+                    JuegoGlobal.indicePreguntaActual++;
+                    ControlJuego.mostrarSiguientePregunta(this);
+                }
             }
         }
 
