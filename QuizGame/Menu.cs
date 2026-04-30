@@ -61,7 +61,6 @@ namespace QuizGame
         private void Menu_Load(object sender, EventArgs e)
         {
             ConexionGlobal.Cliente.Enviar("PARTIDA_INICIADA");
-            VerificaPartidaIniciada();
         }
 
         private void btn_cat1_Click_1(object sender, EventArgs e)

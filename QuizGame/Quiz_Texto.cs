@@ -15,16 +15,17 @@ namespace QuizGame
 {
     public partial class Quiz_Texto : Form
     {
-        int tiempo = 10;
-        bool respuesta = false;
+        int tiempo;
+        bool respuesta;
 
         public Quiz_Texto()
         {
             InitializeComponent();
+            tiempo = 10;
+            respuesta = false;
             //ConexionGlobal.Cliente.OnPreguntasRecibidas += MostrarPreguntas;
             mostrarPregunta();
             TiempoEspera.Start();
-
         }
         //Metodo para cargar las preguntas y respuestas a sus respectivos contenedores
         void mostrarPregunta()
@@ -59,6 +60,8 @@ namespace QuizGame
         //Verificar la respuesta
         void verificarRespuesta(object sender)
         {
+            respuesta = true;
+            lbEsperando.Visible = true;
             bloquearBotones();
             Button boton = (Button)sender;
             Respuesta r = (Respuesta)boton.Tag;
@@ -69,12 +72,9 @@ namespace QuizGame
             PartidaDetalle detalle = new PartidaDetalle();
             detalle.idPregunta = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual].idPregunta;
             detalle.fueCorrecta = r.esCorrecta;
-
             JuegoGlobal.detallesAcumulados.Add(detalle);
 
-            JuegoGlobal.indicePreguntaActual++;
-
-            ControlJuego.mostrarSiguientePregunta(this);
+           
         }
 
 
@@ -146,7 +146,7 @@ namespace QuizGame
             tiempo--;
             lbContador.Text = tiempo.ToString();
 
-            if (tiempo <= 0)
+            if (tiempo == 0)
             {
                 TiempoEspera.Stop();
                 if (respuesta == false)
@@ -155,10 +155,13 @@ namespace QuizGame
                     detalle.idPregunta = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual].idPregunta;
                     detalle.fueCorrecta = false;
                     JuegoGlobal.detallesAcumulados.Add(detalle);
-                    JuegoGlobal.indicePreguntaActual++;
-                    ControlJuego.mostrarSiguientePregunta(this);
                 }
+                JuegoGlobal.indicePreguntaActual++;
+                this.Close();
+                ControlJuego.mostrarSiguientePregunta(this);
+
             }
+           
         }
 
         void bloquearBotones()

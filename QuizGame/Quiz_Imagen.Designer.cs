@@ -37,6 +37,7 @@
             this.imagen_respuesta1 = new QuizGame.ControlesPersonalizados.PictureBoxRedondeado();
             this.pregunta = new QuizGame.ControlesPersonalizados.PreguntaControl();
             this.TiempoEspera = new System.Windows.Forms.Timer(this.components);
+            this.lbEsperando = new System.Windows.Forms.Label();
             this.fondo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagen_respuesta4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagen_respuesta3)).BeginInit();
@@ -48,6 +49,7 @@
             // 
             this.fondo.BorderColor = System.Drawing.Color.MediumPurple;
             this.fondo.CenterColor = System.Drawing.Color.PaleTurquoise;
+            this.fondo.Controls.Add(this.lbEsperando);
             this.fondo.Controls.Add(this.lbContador);
             this.fondo.Controls.Add(this.imagen_respuesta4);
             this.fondo.Controls.Add(this.imagen_respuesta3);
@@ -136,6 +138,18 @@
             this.TiempoEspera.Interval = 1000;
             this.TiempoEspera.Tick += new System.EventHandler(this.TiempoEspera_Tick);
             // 
+            // lbEsperando
+            // 
+            this.lbEsperando.AutoSize = true;
+            this.lbEsperando.BackColor = System.Drawing.Color.Transparent;
+            this.lbEsperando.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEsperando.Location = new System.Drawing.Point(62, 376);
+            this.lbEsperando.Name = "lbEsperando";
+            this.lbEsperando.Size = new System.Drawing.Size(681, 46);
+            this.lbEsperando.TabIndex = 15;
+            this.lbEsperando.Text = "Esperando a los demas jugadores";
+            this.lbEsperando.Visible = false;
+            // 
             // Quiz_Imagen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,5 +179,6 @@
         private ControlesPersonalizados.PictureBoxRedondeado imagen_respuesta2;
         private System.Windows.Forms.Label lbContador;
         private System.Windows.Forms.Timer TiempoEspera;
+        private System.Windows.Forms.Label lbEsperando;
     }
 }

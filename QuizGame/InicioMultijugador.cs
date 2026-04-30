@@ -28,7 +28,6 @@ namespace QuizGame
             if (conectado)
             {
              //   MessageBox.Show("Conectado al servidor correctamente.");
-                this.Close();
                 Menu ventana = new Menu();
                 ventana.Show();
                 this.Hide();
