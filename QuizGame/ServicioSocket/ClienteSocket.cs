@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using QuizGame.ClasesAdicionales;
 using QuizGame.Modelos;
 using System;
 using System.Collections.Generic;
@@ -85,7 +86,7 @@ namespace QuizGame.ServicioSocket
             return true;
         }
 
-    //Esperando respuesta Hilo
+        //Esperando respuesta Hilo
         private void EscucharServidor()
         {
             byte[] buffer = new byte[4096];
@@ -96,26 +97,29 @@ namespace QuizGame.ServicioSocket
                 try
                 {
                     int bytes = stream.Read(buffer, 0, buffer.Length);
-                    Console.WriteLine("Bytes recibidos: " + bytes);
-                    Console.WriteLine(Encoding.UTF8.GetString(buffer, 0, bytes));
+
                     if (bytes == 0) break;
 
-                    data.Append(Encoding.UTF8.GetString(buffer, 0, bytes));
+                    string recibido = Encoding.UTF8.GetString(buffer, 0, bytes);
+                    Console.WriteLine("Recibido: " + recibido);
+
+                    data.Append(recibido);
 
                     string contenido = data.ToString();
 
-                    if (contenido.Contains("\n"))
+                    while (contenido.Contains("\n"))
                     {
-                        string[] mensajes = contenido.Split('\n');
+                        int index = contenido.IndexOf('\n');
+                        string mensaje = contenido.Substring(0, index).Trim();
 
-                        foreach (string msg in mensajes)
-                        {
-                            if (!string.IsNullOrWhiteSpace(msg))
-                                ProcesarMensaje(msg);
-                        }
+                        if (!string.IsNullOrWhiteSpace(mensaje))
+                            ProcesarMensaje(mensaje);
 
-                        data.Clear();
+                        contenido = contenido.Substring(index + 1);
                     }
+
+                    data.Clear();
+                    data.Append(contenido); // guarda lo incompleto
                 }
                 catch
                 {
@@ -126,41 +130,67 @@ namespace QuizGame.ServicioSocket
 
 
         //Conversion del json
-        private void ProcesarMensaje(string json)
+        private void ProcesarMensaje(string mensaje)
         {
             try
             {
-                var respuesta = JsonConvert.DeserializeObject<RespuestaServidor>(json);
+                mensaje = mensaje.Trim();
 
-                if (respuesta.comando == "PREGUNTAS")
+                // 🔹 Detectar si es JSON
+                if (mensaje.StartsWith("{"))
                 {
-                    var preguntas = JsonConvert.DeserializeObject<List<Pregunta>>(respuesta.datos.ToString());
+                    var respuesta = JsonConvert.DeserializeObject<RespuestaServidor>(mensaje);
 
-                    string texto = "";
-
-                    foreach (Pregunta p in preguntas)
+                    if (respuesta.comando == "PREGUNTAS")
                     {
-                        texto += "Pregunta: " + p.textoPregunta + "\n\n";
+                        var preguntas = JsonConvert.DeserializeObject<List<Pregunta>>(respuesta.datos.ToString());
 
-                        foreach (Respuesta r in p.respuestas)
+                        string texto = "";
+
+                        foreach (Pregunta p in preguntas)
                         {
-                            texto += "- " + r.textoRespuesta + "\n";
+                            texto += "Pregunta: " + p.textoPregunta + "\n\n";
+
+                            foreach (Respuesta r in p.respuestas)
+                            {
+                                texto += "- " + r.textoRespuesta + "\n";
+                            }
+
+                            texto += "\n---------------------\n";
                         }
 
-                        texto += "\n---------------------\n";
+                        MessageBox.Show(texto, "Preguntas Recibidas");
+
+                        OnPreguntasRecibidas?.Invoke(preguntas);
                     }
 
-                    MessageBox.Show(texto, "Preguntas Recibidas");
+                    else if (respuesta.comando == "USUARIO_REGISTRADO")
+                    {
+                        int idUsuario = respuesta.id_usuario;
+                        UsuarioGlobal.idUsuario = idUsuario;
 
-                    OnPreguntasRecibidas?.Invoke(preguntas);
+                        MessageBox.Show("Usuario registrado con ID: " + idUsuario);
+                    }
+                }
+                else
+                {
+                    // 🔹 Mensajes tipo texto plano
+                    if (mensaje.StartsWith("USUARIO_REGISTRADO:"))
+                    {
+                        string idStr = mensaje.Split(new char[] { ':' }, 2)[1];
+                        int idUsuario = int.Parse(idStr);
+
+                        UsuarioGlobal.idUsuario = idUsuario;
+
+                        MessageBox.Show("Usuario registrado con ID: " + idUsuario);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error JSON: " + ex.Message);
+                Console.WriteLine("Error procesando mensaje: " + ex.Message);
             }
         }
-
 
         public string Recibir()
         {
@@ -189,6 +219,8 @@ namespace QuizGame.ServicioSocket
     //Clase extra para correcto funcionamiento
         public class RespuestaServidor
         {
+            internal int id_usuario;
+
             public string comando { get; set; }
             public object datos { get; set; }
         }
