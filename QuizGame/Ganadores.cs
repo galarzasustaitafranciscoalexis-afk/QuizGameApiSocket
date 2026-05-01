@@ -19,7 +19,12 @@ namespace QuizGame
 
         private void btn_estaditicas_Click(object sender, EventArgs e)
         {
+            Estadisticas stats = new Estadisticas();
+            stats.StartPosition = FormStartPosition.Manual;
+            stats.Bounds = this.Bounds;
 
+            stats.Show();
+            this.Close();
         }
     }
 }

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.fondo = new QuizGame.ControlesPersonalizados.FondoRadial();
+            this.lbEsperando = new System.Windows.Forms.Label();
             this.lbContador = new System.Windows.Forms.Label();
             this.pregunta = new QuizGame.ControlesPersonalizados.PreguntaControl();
             this.btn_respuesta4 = new QuizGame.BotonesPersonalizados.Boton();
@@ -37,7 +38,6 @@
             this.btn_respuesta3 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta1 = new QuizGame.BotonesPersonalizados.Boton();
             this.TiempoEspera = new System.Windows.Forms.Timer(this.components);
-            this.lbEsperando = new System.Windows.Forms.Label();
             this.fondo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,18 @@
             this.fondo.Name = "fondo";
             this.fondo.Size = new System.Drawing.Size(734, 461);
             this.fondo.TabIndex = 0;
+            // 
+            // lbEsperando
+            // 
+            this.lbEsperando.AutoSize = true;
+            this.lbEsperando.BackColor = System.Drawing.Color.Transparent;
+            this.lbEsperando.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEsperando.Location = new System.Drawing.Point(29, 387);
+            this.lbEsperando.Name = "lbEsperando";
+            this.lbEsperando.Size = new System.Drawing.Size(681, 46);
+            this.lbEsperando.TabIndex = 16;
+            this.lbEsperando.Text = "Esperando a los demas jugadores";
+            this.lbEsperando.Visible = false;
             // 
             // lbContador
             // 
@@ -166,18 +178,6 @@
             // 
             this.TiempoEspera.Interval = 1000;
             this.TiempoEspera.Tick += new System.EventHandler(this.TiempoEspera_Tick);
-            // 
-            // lbEsperando
-            // 
-            this.lbEsperando.AutoSize = true;
-            this.lbEsperando.BackColor = System.Drawing.Color.Transparent;
-            this.lbEsperando.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEsperando.Location = new System.Drawing.Point(41, 386);
-            this.lbEsperando.Name = "lbEsperando";
-            this.lbEsperando.Size = new System.Drawing.Size(681, 46);
-            this.lbEsperando.TabIndex = 16;
-            this.lbEsperando.Text = "Esperando a los demas jugadores";
-            this.lbEsperando.Visible = false;
             // 
             // Quiz_Texto
             // 

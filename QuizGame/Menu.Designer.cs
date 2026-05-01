@@ -55,7 +55,7 @@
             this.fondo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fondo.Location = new System.Drawing.Point(0, 0);
             this.fondo.Name = "fondo";
-            this.fondo.Size = new System.Drawing.Size(747, 467);
+            this.fondo.Size = new System.Drawing.Size(751, 467);
             this.fondo.TabIndex = 2;
             // 
             // lbEstado
@@ -64,7 +64,7 @@
             this.lbEstado.AutoSize = true;
             this.lbEstado.BackColor = System.Drawing.Color.Transparent;
             this.lbEstado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEstado.Location = new System.Drawing.Point(146, 426);
+            this.lbEstado.Location = new System.Drawing.Point(120, 413);
             this.lbEstado.Name = "lbEstado";
             this.lbEstado.Size = new System.Drawing.Size(459, 32);
             this.lbEstado.TabIndex = 6;
@@ -76,7 +76,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(292, 20);
+            this.label1.Location = new System.Drawing.Point(266, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 55);
             this.label1.TabIndex = 5;
@@ -94,7 +94,7 @@
             this.btn_cat5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat5.ForeColor = System.Drawing.Color.White;
-            this.btn_cat5.Location = new System.Drawing.Point(246, 362);
+            this.btn_cat5.Location = new System.Drawing.Point(220, 362);
             this.btn_cat5.Name = "btn_cat5";
             this.btn_cat5.Size = new System.Drawing.Size(247, 40);
             this.btn_cat5.TabIndex = 4;
@@ -115,7 +115,7 @@
             this.btn_cat4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat4.ForeColor = System.Drawing.Color.White;
-            this.btn_cat4.Location = new System.Drawing.Point(246, 290);
+            this.btn_cat4.Location = new System.Drawing.Point(220, 290);
             this.btn_cat4.Name = "btn_cat4";
             this.btn_cat4.Size = new System.Drawing.Size(247, 40);
             this.btn_cat4.TabIndex = 3;
@@ -136,7 +136,7 @@
             this.btn_cat3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat3.ForeColor = System.Drawing.Color.White;
-            this.btn_cat3.Location = new System.Drawing.Point(246, 227);
+            this.btn_cat3.Location = new System.Drawing.Point(220, 227);
             this.btn_cat3.Name = "btn_cat3";
             this.btn_cat3.Size = new System.Drawing.Size(247, 40);
             this.btn_cat3.TabIndex = 2;
@@ -157,7 +157,7 @@
             this.btn_cat2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat2.ForeColor = System.Drawing.Color.White;
-            this.btn_cat2.Location = new System.Drawing.Point(246, 163);
+            this.btn_cat2.Location = new System.Drawing.Point(220, 163);
             this.btn_cat2.Name = "btn_cat2";
             this.btn_cat2.Size = new System.Drawing.Size(247, 40);
             this.btn_cat2.TabIndex = 1;
@@ -178,7 +178,7 @@
             this.btn_cat1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat1.ForeColor = System.Drawing.Color.White;
-            this.btn_cat1.Location = new System.Drawing.Point(246, 101);
+            this.btn_cat1.Location = new System.Drawing.Point(220, 101);
             this.btn_cat1.Name = "btn_cat1";
             this.btn_cat1.Size = new System.Drawing.Size(247, 40);
             this.btn_cat1.TabIndex = 0;

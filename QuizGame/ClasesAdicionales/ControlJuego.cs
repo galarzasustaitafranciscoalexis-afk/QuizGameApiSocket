@@ -47,11 +47,11 @@ namespace QuizGame.ClasesAdicionales
                 //Limpiar los arreglos de la partida (Lista de preguntas y lista de historial), quitar message box
 
                 // Mostrar ventana de estadísticas
-                Estadisticas stats = new Estadisticas();
-                stats.StartPosition = FormStartPosition.Manual;
-                stats.Bounds = formActual.Bounds;
+                Ganadores podio = new Ganadores();
+                podio.StartPosition = FormStartPosition.Manual;
+                podio.Bounds = formActual.Bounds;
 
-                stats.Show();
+                podio.Show();
 
                 // Cerrar formulario actual
                 formActual.Close();
