@@ -1,5 +1,6 @@
 ﻿using QuizGame.ClasesAdicionales;
 using QuizGame.Modelos;
+using QuizGame.ServicioSocket;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,12 +35,15 @@ namespace QuizGame
                 return;
             }
 
-            UsuarioGlobal.NombreUsuario = nombre;
+            
             bool conectado = ConexionGlobal.Cliente.Conectar();
+            UsuarioGlobal.NombreUsuario = nombre;
 
             if (conectado)
             {
                 MessageBox.Show("Conectado al servidor correctamente.");
+                if (ConexionGlobal.Cliente.Enviar("REGISTRAR_USUARIO:" + nombre))
+                    MessageBox.Show("Usuario enviado");
 
                 Menu ventana = new Menu();
                 ventana.Show();

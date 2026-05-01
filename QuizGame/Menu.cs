@@ -20,6 +20,7 @@ namespace QuizGame
         public Menu()
         {
             InitializeComponent();
+            MessageBox.Show("Id usurario: " + UsuarioGlobal.idUsuario);
             ConexionGlobal.Cliente.OnPreguntasRecibidas += MostrarPreguntas;
         }
         void iniciarJuego(int categoria)
