@@ -130,7 +130,7 @@ namespace QuizGame.ServicioSocket
 
 
         //Conversion del json
-        private void ProcesarMensaje(string mensaje)
+        private void ProcesarMensaje(string json)
         {
             try
             {
@@ -189,27 +189,18 @@ namespace QuizGame.ServicioSocket
                     JuegoGlobal.idPartida = respuesta.id_partida;
                     var preguntas = JsonConvert.DeserializeObject<List<Pregunta>>(respuesta.datos.ToString());
 
-                    if (respuesta.comando == "PREGUNTAS")
+                    string texto = "";
+
+                    foreach (Pregunta p in preguntas)
                     {
-                        var preguntas = JsonConvert.DeserializeObject<List<Pregunta>>(respuesta.datos.ToString());
+                        texto += "Pregunta: " + p.textoPregunta + "\n\n";
 
-                        string texto = "";
-
-                        foreach (Pregunta p in preguntas)
+                        foreach (Respuesta r in p.respuestas)
                         {
-                            texto += "Pregunta: " + p.textoPregunta + "\n\n";
-
-                            foreach (Respuesta r in p.respuestas)
-                            {
-                                texto += "- " + r.textoRespuesta + "\n";
-                            }
-
-                            texto += "\n---------------------\n";
+                            texto += "- " + r.textoRespuesta + "\n";
                         }
 
-                        MessageBox.Show(texto, "Preguntas Recibidas");
-
-                        OnPreguntasRecibidas?.Invoke(preguntas);
+                        texto += "\n---------------------\n";
                     }
 
                     OnPreguntasRecibidas?.Invoke(preguntas);
