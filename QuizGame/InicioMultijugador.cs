@@ -1,5 +1,6 @@
 ﻿using QuizGame.ClasesAdicionales;
 using QuizGame.Modelos;
+using QuizGame.ServicioSocket;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
