@@ -149,8 +149,39 @@ namespace QuizGame.ServicioSocket
                     UsuarioGlobal.EsHost = true;
                     return;
                 }
- 
-                    var respuesta = JsonConvert.DeserializeObject<RespuestaServidor>(json);
+
+             
+
+
+                var respuesta = JsonConvert.DeserializeObject<RespuestaServidor>(json);
+
+
+                if (respuesta.comando == "COMENZAR_JUEGO")
+                {
+                    
+                    JuegoGlobal.preguntas = JsonConvert.DeserializeObject<List<Pregunta>>(respuesta.datos.ToString());
+                    JuegoGlobal.idPartida = respuesta.id_partida;
+                    JuegoGlobal.indicePreguntaActual = 0;
+                    JuegoGlobal.puntaje = 0;
+
+                    Form formularioActual = null;
+                    foreach (Form f in Application.OpenForms)
+                    {
+                        if (f.Visible)
+                        {
+                            formularioActual = f;
+                            break;
+                        }
+                    }
+
+                    
+                    if (formularioActual != null)
+                    {
+                        formularioActual.Invoke(new MethodInvoker(() => {
+                            ControlJuego.mostrarSiguientePregunta(formularioActual);
+                        }));
+                    }
+                }
 
                 if (respuesta.comando == "PREGUNTAS")
                 {
@@ -171,9 +202,27 @@ namespace QuizGame.ServicioSocket
                         texto += "\n---------------------\n";
                     }
 
-                    MessageBox.Show(texto, "Preguntas Recibidas");
-
                     OnPreguntasRecibidas?.Invoke(preguntas);
+                }
+
+                if (respuesta.comando == "MOSTRAR_PODIO")
+                {
+                    
+                    var listaPodio = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(respuesta.datos.ToString());
+                    Ganadores formEncontrado = null;
+                    foreach (Form ventana in Application.OpenForms)
+                    {
+                        if (ventana is Ganadores)
+                        {
+                            formEncontrado = (Ganadores)ventana;
+                            break;
+                        }
+                    }
+
+                    if (formEncontrado != null)
+                    {
+                        formEncontrado.LLenarPodio(listaPodio);
+                    }
                 }
             }
             catch (Exception ex)
@@ -214,7 +263,12 @@ namespace QuizGame.ServicioSocket
             public object datos { get; set; }
             public int id_partida { get; set; }
 
-
         }
+
+        public class JugadorPodio
+        {
+            public string nombre { get; set; }
+            public int puntaje_final { get; set; }
+        }   
     }
 }

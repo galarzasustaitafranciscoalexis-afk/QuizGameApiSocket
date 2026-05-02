@@ -28,8 +28,7 @@ namespace QuizGame
             if (conectado)
             {
 
-                if (ConexionGlobal.Cliente.Enviar("REGISTRAR_USUARIO:" + nombre))
-                    MessageBox.Show("Usuario enviado");
+                ConexionGlobal.Cliente.Enviar("REGISTRAR_USUARIO:" + nombre);
 
                 Menu ventana = new Menu();
                 ventana.Show();

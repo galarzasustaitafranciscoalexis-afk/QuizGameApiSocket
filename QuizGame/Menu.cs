@@ -25,7 +25,7 @@ namespace QuizGame
         {
             InitializeComponent();
             ConexionGlobal.Cliente.OnPreguntasRecibidas += MostrarPreguntas;
-            VerificaHost();   
+            VerificaHost();
         }
 
       

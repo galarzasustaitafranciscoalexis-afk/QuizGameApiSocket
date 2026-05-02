@@ -106,7 +106,6 @@ namespace QuizGame
                 TiempoEspera.Stop();
                 if(respuesta == false)
                 {
-                    //this.Close();
                     PartidaDetalle detalle = new PartidaDetalle();
                     detalle.idPregunta = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual].idPregunta;
                     detalle.fueCorrecta = false;
