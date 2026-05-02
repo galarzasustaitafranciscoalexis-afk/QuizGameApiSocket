@@ -103,7 +103,7 @@ namespace QuizGame
             JuegoGlobal.preguntas.Clear();
             JuegoGlobal.detallesAcumulados.Clear();
 
-            Menu menu = new Menu();
+            InicioMultijugador menu = new InicioMultijugador();
             menu.Show();
 
             this.Close();

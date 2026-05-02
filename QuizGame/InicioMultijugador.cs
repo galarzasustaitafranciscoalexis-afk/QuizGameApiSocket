@@ -22,12 +22,15 @@ namespace QuizGame
         private void btn_multi_Click(object sender, EventArgs e)
         {
             string nombre = UserName.Text.Trim();
-            UsuarioGlobal.NombreUsuario = nombre;
             bool conectado = ConexionGlobal.Cliente.Conectar();
+            UsuarioGlobal.NombreUsuario = nombre;
 
             if (conectado)
             {
-             //   MessageBox.Show("Conectado al servidor correctamente.");
+
+                if (ConexionGlobal.Cliente.Enviar("REGISTRAR_USUARIO:" + nombre))
+                    MessageBox.Show("Usuario enviado");
+
                 Menu ventana = new Menu();
                 ventana.Show();
                 this.Hide();
@@ -50,6 +53,6 @@ namespace QuizGame
                 btn_multi.Enabled = true;
             }
         }
-    }    
+    }
 }
 

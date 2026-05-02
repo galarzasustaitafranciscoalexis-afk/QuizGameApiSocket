@@ -1,4 +1,6 @@
-﻿using QuizGame.Clases_base_datos;
+﻿using Newtonsoft.Json;
+using QuizGame.Clases_base_datos;
+using QuizGame.ClasesAdicionales;
 using QuizGame.Modelos;
 using System;
 using System.Collections.Generic;
@@ -7,7 +9,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuizGame.ClasesAdicionales;
 
 namespace QuizGame.ClasesAdicionales
 {
@@ -19,34 +20,24 @@ namespace QuizGame.ClasesAdicionales
             //juego terminado
             if (JuegoGlobal.indicePreguntaActual >= JuegoGlobal.preguntas.Count)
             {
-             
-                //Guardar la partida y sus detalles en la base de datos
-                Partida partidaTerminada = new Partida();
-                partidaTerminada.idCategoria = JuegoGlobal.categoriaActual;
-                partidaTerminada.puntajeFinal = JuegoGlobal.puntaje;
-                partidaTerminada.fecha = DateTime.Now;
-                partidaTerminada.detalles = JuegoGlobal.detallesAcumulados;
 
-                string texto = "";
-
-                foreach (PartidaDetalle d in JuegoGlobal.detallesAcumulados)
+                var partidaFinal = new
                 {
-                    texto += "Pregunta ID: " + d.idPregunta +
-                             " | Correcta: " + d.fueCorrecta + "\n";
-                }
+                    comando = "FINALIZAR_PARTIDA",
+                    id_partida = JuegoGlobal.idPartida,
+                    id_usuario = UsuarioGlobal.idUsuario,
+                    puntaje_final = JuegoGlobal.puntaje,
 
-                MessageBox.Show(texto, "Detalle de Partida");
+                    detalles = JuegoGlobal.detallesAcumulados.Select(d => new
+                    {
+                        id_pregunta = d.idPregunta,
+                        fue_correcta = d.fueCorrecta
+                    }).ToList()
+                };
 
-                ConexionBD db = new ConexionBD();
-                if (!db.guardarPartida(partidaTerminada))
-                {
-                    MessageBox.Show("Hubo un problema al guardar el resultado en la base de datos., " +
-                        "Error de conexión");
-                }
+                string jsonPartida = JsonConvert.SerializeObject(partidaFinal);
+                ConexionGlobal.Cliente.Enviar(jsonPartida + "\n");
 
-                //Limpiar los arreglos de la partida (Lista de preguntas y lista de historial), quitar message box
-
-                // Mostrar ventana de estadísticas
                 Ganadores podio = new Ganadores();
                 podio.StartPosition = FormStartPosition.Manual;
                 podio.Bounds = formActual.Bounds;

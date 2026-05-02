@@ -26,5 +26,6 @@ namespace QuizGame.ClasesAdicionales
         public static List<PartidaDetalle> detallesAcumulados = new List<PartidaDetalle>();
 
         //Guarda id_detalle, id_partida, id_pregunta, fue_correcta
+        public static int idPartida=0;
     }
 }

@@ -9,5 +9,7 @@ namespace QuizGame.ClasesAdicionales
     public class UsuarioGlobal
     {
         public static string NombreUsuario = "";
+        public static int idUsuario = 0;
+        public static bool EsHost= false;
     }
 }

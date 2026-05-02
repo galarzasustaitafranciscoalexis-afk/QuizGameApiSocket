@@ -25,38 +25,10 @@ namespace QuizGame
         {
             InitializeComponent();
             ConexionGlobal.Cliente.OnPreguntasRecibidas += MostrarPreguntas;
-           
-
+            VerificaHost();   
         }
 
-        void iniciarJuego(int categoria)
-        {
-            ConexionBD db = new ConexionBD();
-
-            JuegoGlobal.categoriaActual = categoria;
-
-            JuegoGlobal.preguntas = db.preguntasAleatorias(categoria);
-
-            //Verificacion de las preguntas cargadas con sus respuestas 
-            foreach (Pregunta p in JuegoGlobal.preguntas)
-            {
-                Console.WriteLine("Pregunta: " + p.textoPregunta);
-
-                foreach (Respuesta r in p.respuestas)
-                {
-                    Console.WriteLine("   Respuesta: " + r.textoRespuesta +
-                                      " Correcta: " + r.esCorrecta);
-                }
-            }
-
-            //Inicializacion de las variables globales (poscion de la pregunta en el arreglo y puntuacion)
-            JuegoGlobal.indicePreguntaActual = 0;
-
-            JuegoGlobal.puntaje = 0;
-
-            ControlJuego.mostrarSiguientePregunta(this);
-        }
-
+      
 
         private void Menu_Load(object sender, EventArgs e)
         {
@@ -123,16 +95,18 @@ namespace QuizGame
             }
         }
 
-        void VerificaPartidaIniciada(string partidaIniciada)
+        void VerificaHost()
         {
 
-            if (partidaIniciada == "true")
+            if (UsuarioGlobal.EsHost == false)
             {
+                lbEstado.Text = "El host esta eligiendo categoria";
                 BloquearBotones();
-                timer.Start();
             }
-
-
+            else
+            {
+                lbEstado.Visible= false;
+            }
         }
 
         void BloquearBotones()

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using QuizGame.ClasesAdicionales;
 using QuizGame.Modelos;
 using System;
 using System.Collections.Generic;
@@ -130,10 +131,30 @@ namespace QuizGame.ServicioSocket
         {
             try
             {
-                var respuesta = JsonConvert.DeserializeObject<RespuestaServidor>(json);
+
+                if (json.StartsWith("USUARIO_REGISTRADO:"))
+                {
+                    string[] partes = json.Split(':');
+
+                    if (partes.Length == 2)
+                    {
+                        UsuarioGlobal.idUsuario = int.Parse(partes[1].Trim());
+                    }
+
+                    return;
+                }
+
+                if (json.StartsWith("ROL:HOST"))
+                {
+                    UsuarioGlobal.EsHost = true;
+                    return;
+                }
+ 
+                    var respuesta = JsonConvert.DeserializeObject<RespuestaServidor>(json);
 
                 if (respuesta.comando == "PREGUNTAS")
                 {
+                    JuegoGlobal.idPartida = respuesta.id_partida;
                     var preguntas = JsonConvert.DeserializeObject<List<Pregunta>>(respuesta.datos.ToString());
 
                     string texto = "";
@@ -191,6 +212,9 @@ namespace QuizGame.ServicioSocket
         {
             public string comando { get; set; }
             public object datos { get; set; }
+            public int id_partida { get; set; }
+
+
         }
     }
 }
