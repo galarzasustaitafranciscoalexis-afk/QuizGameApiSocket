@@ -15,12 +15,17 @@ namespace QuizGame
 {
     public partial class Quiz_Texto : Form
     {
+        int tiempo;
+        bool respuesta;
+
         public Quiz_Texto()
         {
             InitializeComponent();
+            tiempo = 10;
+            respuesta = false;
             //ConexionGlobal.Cliente.OnPreguntasRecibidas += MostrarPreguntas;
             mostrarPregunta();
-
+            TiempoEspera.Start();
         }
         //Metodo para cargar las preguntas y respuestas a sus respectivos contenedores
         void mostrarPregunta()
@@ -55,6 +60,9 @@ namespace QuizGame
         //Verificar la respuesta
         void verificarRespuesta(object sender)
         {
+            respuesta = true;
+            lbEsperando.Visible = true;
+            bloquearBotones();
             Button boton = (Button)sender;
             Respuesta r = (Respuesta)boton.Tag;
 
@@ -64,12 +72,9 @@ namespace QuizGame
             PartidaDetalle detalle = new PartidaDetalle();
             detalle.idPregunta = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual].idPregunta;
             detalle.fueCorrecta = r.esCorrecta;
-
             JuegoGlobal.detallesAcumulados.Add(detalle);
 
-            JuegoGlobal.indicePreguntaActual++;
-
-            ControlJuego.mostrarSiguientePregunta(this);
+           
         }
 
 
@@ -134,6 +139,37 @@ namespace QuizGame
             JuegoGlobal.indicePreguntaActual = 0;
 
             //mostrarPregunta();
+        }
+
+        private void TiempoEspera_Tick(object sender, EventArgs e)
+        {
+            tiempo--;
+            lbContador.Text = tiempo.ToString();
+
+            if (tiempo == 0)
+            {
+                TiempoEspera.Stop();
+                if (respuesta == false)
+                {
+                    PartidaDetalle detalle = new PartidaDetalle();
+                    detalle.idPregunta = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual].idPregunta;
+                    detalle.fueCorrecta = false;
+                    JuegoGlobal.detallesAcumulados.Add(detalle);
+                }
+                JuegoGlobal.indicePreguntaActual++;
+                this.Close();
+                ControlJuego.mostrarSiguientePregunta(this);
+
+            }
+           
+        }
+
+        void bloquearBotones()
+        {
+            btn_respuesta1.Enabled = false;
+            btn_respuesta2.Enabled = false;
+            btn_respuesta3.Enabled = false;
+            btn_respuesta4.Enabled = false;
         }
     }
 }

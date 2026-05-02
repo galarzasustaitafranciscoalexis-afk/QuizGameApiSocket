@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.fondo = new QuizGame.ControlesPersonalizados.FondoRadial();
+            this.lbEsperando = new System.Windows.Forms.Label();
+            this.lbContador = new System.Windows.Forms.Label();
             this.pregunta = new QuizGame.ControlesPersonalizados.PreguntaControl();
             this.btn_respuesta4 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta2 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta3 = new QuizGame.BotonesPersonalizados.Boton();
             this.btn_respuesta1 = new QuizGame.BotonesPersonalizados.Boton();
+            this.TiempoEspera = new System.Windows.Forms.Timer(this.components);
             this.fondo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +45,8 @@
             // 
             this.fondo.BorderColor = System.Drawing.Color.MediumPurple;
             this.fondo.CenterColor = System.Drawing.Color.PaleTurquoise;
+            this.fondo.Controls.Add(this.lbEsperando);
+            this.fondo.Controls.Add(this.lbContador);
             this.fondo.Controls.Add(this.pregunta);
             this.fondo.Controls.Add(this.btn_respuesta4);
             this.fondo.Controls.Add(this.btn_respuesta2);
@@ -51,6 +57,29 @@
             this.fondo.Name = "fondo";
             this.fondo.Size = new System.Drawing.Size(734, 461);
             this.fondo.TabIndex = 0;
+            // 
+            // lbEsperando
+            // 
+            this.lbEsperando.AutoSize = true;
+            this.lbEsperando.BackColor = System.Drawing.Color.Transparent;
+            this.lbEsperando.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEsperando.Location = new System.Drawing.Point(29, 387);
+            this.lbEsperando.Name = "lbEsperando";
+            this.lbEsperando.Size = new System.Drawing.Size(681, 46);
+            this.lbEsperando.TabIndex = 16;
+            this.lbEsperando.Text = "Esperando a los demas jugadores";
+            this.lbEsperando.Visible = false;
+            // 
+            // lbContador
+            // 
+            this.lbContador.AutoSize = true;
+            this.lbContador.BackColor = System.Drawing.Color.Transparent;
+            this.lbContador.Font = new System.Drawing.Font("Arial Rounded MT Bold", 30F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbContador.Location = new System.Drawing.Point(639, 9);
+            this.lbContador.Name = "lbContador";
+            this.lbContador.Size = new System.Drawing.Size(68, 46);
+            this.lbContador.TabIndex = 15;
+            this.lbContador.Text = "10";
             // 
             // pregunta
             // 
@@ -145,6 +174,11 @@
             this.btn_respuesta1.UseVisualStyleBackColor = false;
             this.btn_respuesta1.Click += new System.EventHandler(this.btn_respuesta1_Click_1);
             // 
+            // TiempoEspera
+            // 
+            this.TiempoEspera.Interval = 1000;
+            this.TiempoEspera.Tick += new System.EventHandler(this.TiempoEspera_Tick);
+            // 
             // Quiz_Texto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +189,7 @@
             this.Text = "Quiz  Texto";
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.fondo.ResumeLayout(false);
+            this.fondo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -167,6 +202,9 @@
         private BotonesPersonalizados.Boton btn_respuesta2;
         private BotonesPersonalizados.Boton btn_respuesta3;
         private ControlesPersonalizados.PreguntaControl pregunta;
+        private System.Windows.Forms.Label lbContador;
+        private System.Windows.Forms.Timer TiempoEspera;
+        private System.Windows.Forms.Label lbEsperando;
     }
 }
 

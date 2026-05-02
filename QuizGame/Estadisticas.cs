@@ -98,15 +98,19 @@ namespace QuizGame
 
         private void btn_cat1_Click(object sender, EventArgs e)
         {
+            /* //logica antigua de limpiado para una nueva partida
             JuegoGlobal.indicePreguntaActual = 0;
             JuegoGlobal.puntaje = 0;
             JuegoGlobal.preguntas.Clear();
             JuegoGlobal.detallesAcumulados.Clear();
+            ConexionGlobal.Cliente.Cerrar();
 
-            Menu menu = new Menu();
+            InicioMultijugador menu = new InicioMultijugador();
             menu.Show();
 
             this.Close();
+            */
+            Application.Restart(); //reinicia la aplicacion
         }
     }
 }

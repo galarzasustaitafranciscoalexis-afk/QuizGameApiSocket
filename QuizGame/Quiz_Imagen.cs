@@ -15,10 +15,16 @@ namespace QuizGame
 {
     public partial class Quiz_Imagen : Form
     {
+        int tiempo;
+        bool respuesta;
+
         public Quiz_Imagen()
         {
             InitializeComponent();
+            tiempo = 10;
+            respuesta = false;
             mostrarPregunta();
+            TiempoEspera.Start();
 
         }
 
@@ -26,13 +32,7 @@ namespace QuizGame
         void mostrarPregunta()
         {
             Pregunta p = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual];
-
-
-            pregunta.Pregunta = p.textoPregunta;
-
-            //string ruta1 = Application.StartupPath + "\\" + p.respuestas[0].rutaImagen;
-            //string ruta = Path.Combine(Application.StartupPath, p.respuestas[0].rutaImagen);
-            //MessageBox.Show(ruta);
+             pregunta.Pregunta = p.textoPregunta;
 
             imagen_respuesta1.Image = Image.FromFile(Path.Combine(Application.StartupPath, p.respuestas[0].rutaImagen));
             imagen_respuesta2.Image = Image.FromFile(Path.Combine(Application.StartupPath, p.respuestas[1].rutaImagen));
@@ -47,6 +47,11 @@ namespace QuizGame
 
         void verificarRespuesta(object sender)
         {
+            
+            respuesta = true;
+            lbEsperando.Visible = true;
+            bloquearBotones();
+
             PictureBox pic = (PictureBox)sender;
 
             Respuesta r = (Respuesta)pic.Tag;
@@ -62,9 +67,6 @@ namespace QuizGame
             detalle.fueCorrecta = r.esCorrecta;
             JuegoGlobal.detallesAcumulados.Add(detalle);
 
-            JuegoGlobal.indicePreguntaActual++;
-
-            ControlJuego.mostrarSiguientePregunta(this);
         }
 
         private void Quiz_Imagen_Load(object sender, EventArgs e)
@@ -91,5 +93,38 @@ namespace QuizGame
         {
             verificarRespuesta(sender);
         }
+
+     
+
+        private void TiempoEspera_Tick(object sender, EventArgs e)
+        {
+            tiempo--;
+            lbContador.Text = tiempo.ToString();
+
+            if (tiempo == 0)
+            {
+                TiempoEspera.Stop();
+                if(respuesta == false)
+                {
+                    PartidaDetalle detalle = new PartidaDetalle();
+                    detalle.idPregunta = JuegoGlobal.preguntas[JuegoGlobal.indicePreguntaActual].idPregunta;
+                    detalle.fueCorrecta = false;
+                    JuegoGlobal.detallesAcumulados.Add(detalle);
+                }
+                
+                JuegoGlobal.indicePreguntaActual++;
+                this.Close();
+                ControlJuego.mostrarSiguientePregunta(this);
+            }
+        }
+
+        void bloquearBotones()
+        {
+            imagen_respuesta1.Enabled = false;
+            imagen_respuesta2.Enabled = false;
+            imagen_respuesta3.Enabled = false;
+            imagen_respuesta4.Enabled = false;
+        }
+
     }
 }

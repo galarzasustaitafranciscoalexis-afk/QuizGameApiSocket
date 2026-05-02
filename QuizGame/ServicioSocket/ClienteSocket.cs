@@ -134,12 +134,60 @@ namespace QuizGame.ServicioSocket
         {
             try
             {
-                mensaje = mensaje.Trim();
 
-                // 🔹 Detectar si es JSON
-                if (mensaje.StartsWith("{"))
+                if (json.StartsWith("USUARIO_REGISTRADO:"))
                 {
-                    var respuesta = JsonConvert.DeserializeObject<RespuestaServidor>(mensaje);
+                    string[] partes = json.Split(':');
+
+                    if (partes.Length == 2)
+                    {
+                        UsuarioGlobal.idUsuario = int.Parse(partes[1].Trim());
+                    }
+
+                }
+
+                if (json.Contains("ROL:HOST"))
+                {
+                    UsuarioGlobal.EsHost = true;
+                }
+
+             
+
+
+                var respuesta = JsonConvert.DeserializeObject<RespuestaServidor>(json);
+
+
+                if (respuesta.comando == "COMENZAR_JUEGO")
+                {
+                    
+                    JuegoGlobal.preguntas = JsonConvert.DeserializeObject<List<Pregunta>>(respuesta.datos.ToString());
+                    JuegoGlobal.idPartida = respuesta.id_partida;
+                    JuegoGlobal.indicePreguntaActual = 0;
+                    JuegoGlobal.puntaje = 0;
+
+                    Form formularioActual = null;
+                    foreach (Form f in Application.OpenForms)
+                    {
+                        if (f.Visible)
+                        {
+                            formularioActual = f;
+                            break;
+                        }
+                    }
+
+                    
+                    if (formularioActual != null)
+                    {
+                        formularioActual.Invoke(new MethodInvoker(() => {
+                            ControlJuego.mostrarSiguientePregunta(formularioActual);
+                        }));
+                    }
+                }
+
+                if (respuesta.comando == "PREGUNTAS")
+                {
+                    JuegoGlobal.idPartida = respuesta.id_partida;
+                    var preguntas = JsonConvert.DeserializeObject<List<Pregunta>>(respuesta.datos.ToString());
 
                     if (respuesta.comando == "PREGUNTAS")
                     {
@@ -164,25 +212,26 @@ namespace QuizGame.ServicioSocket
                         OnPreguntasRecibidas?.Invoke(preguntas);
                     }
 
-                    else if (respuesta.comando == "USUARIO_REGISTRADO")
-                    {
-                        int idUsuario = respuesta.id_usuario;
-                        UsuarioGlobal.idUsuario = idUsuario;
-
-                        MessageBox.Show("Usuario registrado con ID: " + idUsuario);
-                    }
+                    OnPreguntasRecibidas?.Invoke(preguntas);
                 }
-                else
+
+                if (respuesta.comando == "MOSTRAR_PODIO")
                 {
-                    // 🔹 Mensajes tipo texto plano
-                    if (mensaje.StartsWith("USUARIO_REGISTRADO:"))
+                    
+                    var listaPodio = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(respuesta.datos.ToString());
+                    Ganadores formEncontrado = null;
+                    foreach (Form ventana in Application.OpenForms)
                     {
-                        string idStr = mensaje.Split(new char[] { ':' }, 2)[1];
-                        int idUsuario = int.Parse(idStr);
+                        if (ventana is Ganadores)
+                        {
+                            formEncontrado = (Ganadores)ventana;
+                            break;
+                        }
+                    }
 
-                        UsuarioGlobal.idUsuario = idUsuario;
-
-                        MessageBox.Show("Usuario registrado con ID: " + idUsuario);
+                    if (formEncontrado != null)
+                    {
+                        formEncontrado.LLenarPodio(listaPodio);
                     }
                 }
             }
@@ -223,6 +272,14 @@ namespace QuizGame.ServicioSocket
 
             public string comando { get; set; }
             public object datos { get; set; }
+            public int id_partida { get; set; }
+
         }
+
+        public class JugadorPodio
+        {
+            public string nombre { get; set; }
+            public int puntaje_final { get; set; }
+        }   
     }
 }

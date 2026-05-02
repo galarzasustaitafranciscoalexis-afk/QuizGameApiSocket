@@ -1,60 +1,41 @@
-﻿using QuizGame.Clases_base_datos;
+﻿using QuizGame;
+using QuizGame.Clases_base_datos;
 using QuizGame.ClasesAdicionales;
 using QuizGame.Modelos;
+using QuizGame.ServicioSocket;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuizGame;
-using QuizGame.ServicioSocket;
 
 namespace QuizGame
 {
     public partial class Menu : Form
     {
+        int puntos = 0;
+        string texto = "Esperando a los demas jugadores";
+
         public Menu()
         {
             InitializeComponent();
             MessageBox.Show("Id usurario: " + UsuarioGlobal.idUsuario);
             ConexionGlobal.Cliente.OnPreguntasRecibidas += MostrarPreguntas;
-        }
-        void iniciarJuego(int categoria)
-        {
-            ConexionBD db = new ConexionBD();
-
-            JuegoGlobal.categoriaActual = categoria;
-
-            JuegoGlobal.preguntas = db.preguntasAleatorias(categoria);
-
-            //Verificacion de las preguntas cargadas con sus respuestas 
-            foreach (Pregunta p in JuegoGlobal.preguntas)
-            {
-                Console.WriteLine("Pregunta: " + p.textoPregunta);
-
-                foreach (Respuesta r in p.respuestas)
-                {
-                    Console.WriteLine("   Respuesta: " + r.textoRespuesta +
-                                      " Correcta: " + r.esCorrecta);
-                }
-            }
-
-            //Inicializacion de las variables globales (poscion de la pregunta en el arreglo y puntuacion)
-            JuegoGlobal.indicePreguntaActual = 0;
-
-            JuegoGlobal.puntaje = 0;
-
-            ControlJuego.mostrarSiguientePregunta(this);
+            //MessageBox.Show(UsuarioGlobal.idUsuario.ToString());
+            //VerificaHost();
+            timer.Start();
         }
 
+      
 
         private void Menu_Load(object sender, EventArgs e)
         {
-
+            ConexionGlobal.Cliente.Enviar("PARTIDA_INICIADA");
         }
 
         private void btn_cat1_Click_1(object sender, EventArgs e)
@@ -115,6 +96,40 @@ namespace QuizGame
                 Quiz_Imagen qi = new Quiz_Imagen();
                 qi.Show();
             }
+        }
+
+        void VerificaHost()
+        {
+
+            if (UsuarioGlobal.EsHost == false)
+            {
+                lbEstado.Text = "El host esta eligiendo categoria";
+                BloquearBotones();
+            }
+            else
+            {
+                lbEstado.Visible= false;
+            }
+        }
+
+        void BloquearBotones()
+        {
+            btn_cat1.Enabled = false;
+            btn_cat2.Enabled = false;
+            btn_cat3.Enabled = false;
+            btn_cat4.Enabled = false;
+            btn_cat5.Enabled = false;
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (UsuarioGlobal.EsHost == false)
+            {
+                lbEstado.Visible = true;
+                BloquearBotones();
+                timer.Stop(); 
+            }
+
         }
     }
 }
