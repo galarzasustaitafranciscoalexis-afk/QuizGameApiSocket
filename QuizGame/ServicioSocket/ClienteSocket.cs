@@ -141,13 +141,11 @@ namespace QuizGame.ServicioSocket
                         UsuarioGlobal.idUsuario = int.Parse(partes[1].Trim());
                     }
 
-                    return;
                 }
 
-                if (json.StartsWith("ROL:HOST"))
+                if (json.Contains("ROL:HOST"))
                 {
                     UsuarioGlobal.EsHost = true;
-                    return;
                 }
 
              

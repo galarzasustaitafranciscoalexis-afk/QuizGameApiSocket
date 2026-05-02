@@ -25,7 +25,9 @@ namespace QuizGame
         {
             InitializeComponent();
             ConexionGlobal.Cliente.OnPreguntasRecibidas += MostrarPreguntas;
-            VerificaHost();
+            //MessageBox.Show(UsuarioGlobal.idUsuario.ToString());
+            //VerificaHost();
+            timer.Start();
         }
 
       
@@ -120,12 +122,12 @@ namespace QuizGame
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            puntos++;
-
-            if (puntos > 3)
-                puntos = 0;
-
-            lbEstado.Text = texto + new string('.', puntos);
+            if (UsuarioGlobal.EsHost == false)
+            {
+                lbEstado.Visible = true;
+                BloquearBotones();
+                timer.Stop(); 
+            }
 
         }
     }
